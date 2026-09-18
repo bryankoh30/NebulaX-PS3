@@ -1,0 +1,2856 @@
+{
+  "seed": 42,
+  "split": "StratifiedGroupKFold, numeric content groups, sorted filename, 5 folds",
+  "duplicates": [
+    [
+      "Train107.csv",
+      "Train115.csv"
+    ],
+    [
+      "Train165.csv",
+      "Train187.csv"
+    ]
+  ],
+  "unique_numeric_recordings": 270,
+  "fold_label_counts": {
+    "0": {
+      "Normal": 47,
+      "Side II": 4,
+      "Side I": 3
+    },
+    "1": {
+      "Normal": 47,
+      "Side II": 5,
+      "Side I": 3
+    },
+    "2": {
+      "Normal": 47,
+      "Side II": 5,
+      "Side I": 3
+    },
+    "3": {
+      "Normal": 46,
+      "Side II": 5,
+      "Side I": 3
+    },
+    "4": {
+      "Normal": 47,
+      "Side II": 5,
+      "Side I": 2
+    }
+  },
+  "shape": [
+    10000,
+    129
+  ],
+  "speed_header": "Rotating speed",
+  "channels": [
+    {
+      "header": "Vibration of bearing in position 1 of car 1",
+      "car": 1,
+      "position": 1,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 1 of car 1",
+      "car": 1,
+      "position": 1,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 2 of car 1",
+      "car": 1,
+      "position": 2,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 2 of car 1",
+      "car": 1,
+      "position": 2,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 3 of car 1",
+      "car": 1,
+      "position": 3,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 3 of car 1",
+      "car": 1,
+      "position": 3,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 4 of car 1",
+      "car": 1,
+      "position": 4,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 4 of car 1",
+      "car": 1,
+      "position": 4,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 5 of car 1",
+      "car": 1,
+      "position": 5,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 5 of car 1",
+      "car": 1,
+      "position": 5,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 6 of car 1",
+      "car": 1,
+      "position": 6,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 6 of car 1",
+      "car": 1,
+      "position": 6,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 7 of car 1",
+      "car": 1,
+      "position": 7,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 7 of car 1",
+      "car": 1,
+      "position": 7,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 8 of car 1",
+      "car": 1,
+      "position": 8,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 8 of car 1",
+      "car": 1,
+      "position": 8,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 1 of car 2",
+      "car": 2,
+      "position": 1,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 1 of car 2",
+      "car": 2,
+      "position": 1,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 2 of car 2",
+      "car": 2,
+      "position": 2,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 2 of car 2",
+      "car": 2,
+      "position": 2,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 3 of car 2",
+      "car": 2,
+      "position": 3,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 3 of car 2",
+      "car": 2,
+      "position": 3,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 4 of car 2",
+      "car": 2,
+      "position": 4,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 4 of car 2",
+      "car": 2,
+      "position": 4,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 5 of car 2",
+      "car": 2,
+      "position": 5,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 5 of car 2",
+      "car": 2,
+      "position": 5,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 6 of car 2",
+      "car": 2,
+      "position": 6,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 6 of car 2",
+      "car": 2,
+      "position": 6,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 7 of car 2",
+      "car": 2,
+      "position": 7,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 7 of car 2",
+      "car": 2,
+      "position": 7,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 8 of car 2",
+      "car": 2,
+      "position": 8,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 8 of car 2",
+      "car": 2,
+      "position": 8,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 1 of car 3",
+      "car": 3,
+      "position": 1,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 1 of car 3",
+      "car": 3,
+      "position": 1,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 2 of car 3",
+      "car": 3,
+      "position": 2,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 2 of car 3",
+      "car": 3,
+      "position": 2,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 3 of car 3",
+      "car": 3,
+      "position": 3,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 3 of car 3",
+      "car": 3,
+      "position": 3,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 4 of car 3",
+      "car": 3,
+      "position": 4,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 4 of car 3",
+      "car": 3,
+      "position": 4,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 5 of car 3",
+      "car": 3,
+      "position": 5,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 5 of car 3",
+      "car": 3,
+      "position": 5,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 6 of car 3",
+      "car": 3,
+      "position": 6,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 6 of car 3",
+      "car": 3,
+      "position": 6,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 7 of car 3",
+      "car": 3,
+      "position": 7,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 7 of car 3",
+      "car": 3,
+      "position": 7,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 8 of car 3",
+      "car": 3,
+      "position": 8,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 8 of car 3",
+      "car": 3,
+      "position": 8,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 1 of car 4",
+      "car": 4,
+      "position": 1,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 1 of car 4",
+      "car": 4,
+      "position": 1,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 2 of car 4",
+      "car": 4,
+      "position": 2,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 2 of car 4",
+      "car": 4,
+      "position": 2,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 3 of car 4",
+      "car": 4,
+      "position": 3,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 3 of car 4",
+      "car": 4,
+      "position": 3,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 4 of car 4",
+      "car": 4,
+      "position": 4,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 4 of car 4",
+      "car": 4,
+      "position": 4,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 5 of car 4",
+      "car": 4,
+      "position": 5,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 5 of car 4",
+      "car": 4,
+      "position": 5,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 6 of car 4",
+      "car": 4,
+      "position": 6,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 6 of car 4",
+      "car": 4,
+      "position": 6,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 7 of car 4",
+      "car": 4,
+      "position": 7,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 7 of car 4",
+      "car": 4,
+      "position": 7,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 8 of car 4",
+      "car": 4,
+      "position": 8,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 8 of car 4",
+      "car": 4,
+      "position": 8,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 1 of car 5",
+      "car": 5,
+      "position": 1,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 1 of car 5",
+      "car": 5,
+      "position": 1,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 2 of car 5",
+      "car": 5,
+      "position": 2,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 2 of car 5",
+      "car": 5,
+      "position": 2,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 3 of car 5",
+      "car": 5,
+      "position": 3,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 3 of car 5",
+      "car": 5,
+      "position": 3,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 4 of car 5",
+      "car": 5,
+      "position": 4,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 4 of car 5",
+      "car": 5,
+      "position": 4,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 5 of car 5",
+      "car": 5,
+      "position": 5,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 5 of car 5",
+      "car": 5,
+      "position": 5,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 6 of car 5",
+      "car": 5,
+      "position": 6,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 6 of car 5",
+      "car": 5,
+      "position": 6,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 7 of car 5",
+      "car": 5,
+      "position": 7,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 7 of car 5",
+      "car": 5,
+      "position": 7,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 8 of car 5",
+      "car": 5,
+      "position": 8,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 8 of car 5",
+      "car": 5,
+      "position": 8,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 1 of car 6",
+      "car": 6,
+      "position": 1,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 1 of car 6",
+      "car": 6,
+      "position": 1,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 2 of car 6",
+      "car": 6,
+      "position": 2,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 2 of car 6",
+      "car": 6,
+      "position": 2,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 3 of car 6",
+      "car": 6,
+      "position": 3,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 3 of car 6",
+      "car": 6,
+      "position": 3,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 4 of car 6",
+      "car": 6,
+      "position": 4,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 4 of car 6",
+      "car": 6,
+      "position": 4,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 5 of car 6",
+      "car": 6,
+      "position": 5,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 5 of car 6",
+      "car": 6,
+      "position": 5,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 6 of car 6",
+      "car": 6,
+      "position": 6,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 6 of car 6",
+      "car": 6,
+      "position": 6,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 7 of car 6",
+      "car": 6,
+      "position": 7,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 7 of car 6",
+      "car": 6,
+      "position": 7,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 8 of car 6",
+      "car": 6,
+      "position": 8,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 8 of car 6",
+      "car": 6,
+      "position": 8,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 1 of car 7",
+      "car": 7,
+      "position": 1,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 1 of car 7",
+      "car": 7,
+      "position": 1,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 2 of car 7",
+      "car": 7,
+      "position": 2,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 2 of car 7",
+      "car": 7,
+      "position": 2,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 3 of car 7",
+      "car": 7,
+      "position": 3,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 3 of car 7",
+      "car": 7,
+      "position": 3,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 4 of car 7",
+      "car": 7,
+      "position": 4,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 4 of car 7",
+      "car": 7,
+      "position": 4,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 5 of car 7",
+      "car": 7,
+      "position": 5,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 5 of car 7",
+      "car": 7,
+      "position": 5,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 6 of car 7",
+      "car": 7,
+      "position": 6,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 6 of car 7",
+      "car": 7,
+      "position": 6,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 7 of car 7",
+      "car": 7,
+      "position": 7,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 7 of car 7",
+      "car": 7,
+      "position": 7,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 8 of car 7",
+      "car": 7,
+      "position": 8,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 8 of car 7",
+      "car": 7,
+      "position": 8,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 1 of car 8",
+      "car": 8,
+      "position": 1,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 1 of car 8",
+      "car": 8,
+      "position": 1,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 2 of car 8",
+      "car": 8,
+      "position": 2,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 2 of car 8",
+      "car": 8,
+      "position": 2,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 3 of car 8",
+      "car": 8,
+      "position": 3,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 3 of car 8",
+      "car": 8,
+      "position": 3,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 4 of car 8",
+      "car": 8,
+      "position": 4,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 4 of car 8",
+      "car": 8,
+      "position": 4,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 5 of car 8",
+      "car": 8,
+      "position": 5,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 5 of car 8",
+      "car": 8,
+      "position": 5,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 6 of car 8",
+      "car": 8,
+      "position": 6,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 6 of car 8",
+      "car": 8,
+      "position": 6,
+      "kind": "shock",
+      "side": "Side II"
+    },
+    {
+      "header": "Vibration of bearing in position 7 of car 8",
+      "car": 8,
+      "position": 7,
+      "kind": "vibration",
+      "side": "Side I"
+    },
+    {
+      "header": "Shock of bearing in position 7 of car 8",
+      "car": 8,
+      "position": 7,
+      "kind": "shock",
+      "side": "Side I"
+    },
+    {
+      "header": "Vibration of bearing in position 8 of car 8",
+      "car": 8,
+      "position": 8,
+      "kind": "vibration",
+      "side": "Side II"
+    },
+    {
+      "header": "Shock of bearing in position 8 of car 8",
+      "car": 8,
+      "position": 8,
+      "kind": "shock",
+      "side": "Side II"
+    }
+  ],
+  "label_counts": {
+    "Normal": 234,
+    "Side II": 24,
+    "Side I": 14
+  },
+  "recordings": [
+    {
+      "file_id": "Train1.csv",
+      "label": "Normal",
+      "sha256": "1699196787882b1a3a9e96d506b70eb9a361008998611284b29f597e5eb97393",
+      "numeric_sha256": "35dda45e555963a2ec52bc564637cc615a7d7dff3d59c072a0c303156b614ed4",
+      "fold": 4
+    },
+    {
+      "file_id": "Train10.csv",
+      "label": "Normal",
+      "sha256": "92508043c801a7288490b081e45431397965412bd718c2906ab2092a01efd12d",
+      "numeric_sha256": "29c7069d157b5d331c23880633508de3de233109a781062fbb7b0c22329b17d4",
+      "fold": 2
+    },
+    {
+      "file_id": "Train100.csv",
+      "label": "Side I",
+      "sha256": "c3dd039dcbe216a960df0323536a4167cc715db8f6900c080e43ed525504cce1",
+      "numeric_sha256": "db3701a400e9f2ac01072890e601b8f395f87181c91c669c9d333bbd0da0b8a4",
+      "fold": 3
+    },
+    {
+      "file_id": "Train101.csv",
+      "label": "Normal",
+      "sha256": "f45e50d73b8053fb5e8a1b95373545999551ccae0d3622e0eb334864b136efd1",
+      "numeric_sha256": "f4bd652dbb07cdf11afb9aa19d208cd6a82a0c7dfdab1e8862fa05ecaa08df36",
+      "fold": 3
+    },
+    {
+      "file_id": "Train102.csv",
+      "label": "Normal",
+      "sha256": "dbdba22ccd0f5798a048732a8b20daf5995278ed74ecc6f26dac7740f387bec1",
+      "numeric_sha256": "9665d5cd6f9477d3718d9a7fec5b57ecdde3c7ef87b1f7df396cbdfa03673b70",
+      "fold": 3
+    },
+    {
+      "file_id": "Train103.csv",
+      "label": "Side II",
+      "sha256": "17ca2fcebd0c6aaf367b5cca79a8d9c7de89dfa75a2e65157e2f05c1e718b83d",
+      "numeric_sha256": "3f1c4a21369029b5fb4aae3b1077c1c7dbc13c9dc984029f7cd98f38e94e8feb",
+      "fold": 4
+    },
+    {
+      "file_id": "Train104.csv",
+      "label": "Side II",
+      "sha256": "e57910abb8c2ccc14962c54f8c34043a9197a5163c33a75253b8fe89fb243609",
+      "numeric_sha256": "7bfa662fefad72a9cfa11d14c40f1f44dfb1dc201c9e8cf462c7fc56e5fc8c97",
+      "fold": 2
+    },
+    {
+      "file_id": "Train105.csv",
+      "label": "Normal",
+      "sha256": "0df8fbfd7dc39709553eca3ecacb804dc4c1822faaa3c89cceae91444d8a6aa3",
+      "numeric_sha256": "356d55570fdaea007167c615cbc38d0aaca581d4887b7d6f0c4a00eddb184e49",
+      "fold": 0
+    },
+    {
+      "file_id": "Train106.csv",
+      "label": "Side I",
+      "sha256": "3e4bcee5bbf5177d6870372b77a3541f0a9cf016f6e88ac54dfbbd70b9fb57a2",
+      "numeric_sha256": "98ec7594f37f5b0838066c93619b0ce00082ac1ad9c838bf1e4c3ed4f66faa03",
+      "fold": 2
+    },
+    {
+      "file_id": "Train107.csv",
+      "label": "Normal",
+      "sha256": "fbaeb7c39a98df672aa4a7bfa8e35941d59ec2e6ea6522bac8a8e4f525c46f39",
+      "numeric_sha256": "13a1021d5f1059eb590bc9fe9c72b97854d618a4e86d99cd0a313f9eb560b0ed",
+      "fold": 0
+    },
+    {
+      "file_id": "Train108.csv",
+      "label": "Normal",
+      "sha256": "abe4eba9e246419f1da14eba8e7bd9a76ca94e7947febdac6144c42da36ea412",
+      "numeric_sha256": "41ff004a83381b585a8965abb0cea3ce712bd3cadca0feeb7b9f4a1e317a5abf",
+      "fold": 3
+    },
+    {
+      "file_id": "Train109.csv",
+      "label": "Normal",
+      "sha256": "aaf85f8e166b3c8f33c4b07d06ffc9b71b5a3b85cfa320085e8248efaa90e93a",
+      "numeric_sha256": "7d70b2915ab456d80974b319431f9bec8a82687406e2b37155e9a756c258c3bb",
+      "fold": 0
+    },
+    {
+      "file_id": "Train11.csv",
+      "label": "Normal",
+      "sha256": "64ecf8443f7de029db9e2a3761de42c937a3f74a92826e3a29fbea5cf527e3fb",
+      "numeric_sha256": "4992ddd0e10a803c7068332c6d2c3b487edfc7ab26bc4e6f9e3be862d0f41c2c",
+      "fold": 2
+    },
+    {
+      "file_id": "Train110.csv",
+      "label": "Normal",
+      "sha256": "da7404f8a8278acac54e5da1f837b762a99fcbd67d564e32d98003104e6c786d",
+      "numeric_sha256": "a5777de86f2de3dd0f018ae0c663ac45e88c42fec2ba52330423a18f1e854d18",
+      "fold": 3
+    },
+    {
+      "file_id": "Train111.csv",
+      "label": "Side II",
+      "sha256": "0e588dbdf96fdaecd0a247e91c22c663bcb644c162cafc41ef6d5831ff616271",
+      "numeric_sha256": "4da64fe9b0857c7e507458e02fee973ed6527884de1e74d234cf06dd15d95915",
+      "fold": 1
+    },
+    {
+      "file_id": "Train112.csv",
+      "label": "Normal",
+      "sha256": "fbc29e62fddb9c4358123ea4426e4479483a9641f795265144d3b59229f785e6",
+      "numeric_sha256": "ac5c38e7af6cad500e4d17bb3e8b3514f4dff45690b89b8cbda9b7be087f3617",
+      "fold": 3
+    },
+    {
+      "file_id": "Train113.csv",
+      "label": "Normal",
+      "sha256": "bdc25e5df7b9243163d768ba84ca142eebe6a99530276510110dd962b1ba7220",
+      "numeric_sha256": "acb97c7cb78705b92f64021ea0947b90ce04962dd441bc41ecf5eeee9779da31",
+      "fold": 4
+    },
+    {
+      "file_id": "Train114.csv",
+      "label": "Normal",
+      "sha256": "4483df9a3cdd839b6ad7e16bed5162f29c5ac8453077df3aa0aa0b71ae3804b1",
+      "numeric_sha256": "60a42ff9dddaf9ce6eb46b38da3b70dec5b9981be2f7b053f45126dfb106db73",
+      "fold": 4
+    },
+    {
+      "file_id": "Train115.csv",
+      "label": "Normal",
+      "sha256": "fbaeb7c39a98df672aa4a7bfa8e35941d59ec2e6ea6522bac8a8e4f525c46f39",
+      "numeric_sha256": "13a1021d5f1059eb590bc9fe9c72b97854d618a4e86d99cd0a313f9eb560b0ed",
+      "fold": 0
+    },
+    {
+      "file_id": "Train116.csv",
+      "label": "Normal",
+      "sha256": "dd576650a0de6b850c6a3cb71e147408dd39f00d901807e025878fa2baf9879d",
+      "numeric_sha256": "0a2e7d10efd49f299055fea1252188c767bd0344d62d8aed7b0ba01532e5b4df",
+      "fold": 2
+    },
+    {
+      "file_id": "Train117.csv",
+      "label": "Normal",
+      "sha256": "98206c70b50e91b6b79c165f13059c94eb095e6a724ccf6951dfa04b04b022f9",
+      "numeric_sha256": "c14e72b7d54214c25659aba24280e0a316cabd6931a6658337176bf232e5afce",
+      "fold": 4
+    },
+    {
+      "file_id": "Train118.csv",
+      "label": "Normal",
+      "sha256": "d5952c1f905e8b3c92d5d3804b782962293dbcbff715b542532737ce287060df",
+      "numeric_sha256": "548e3883fb6e5fb7caeea75cdcab4afab422fabe3d1f5c5bea9239b76ca69526",
+      "fold": 0
+    },
+    {
+      "file_id": "Train119.csv",
+      "label": "Normal",
+      "sha256": "0b14a92e770ef37842c45e2249e28ac46d88bf59ff2eab8738ba25eb227e273e",
+      "numeric_sha256": "4f54a3b23d949bcb2be4b35e7e0419eae779901c0eec230d395dcb8f715e4f72",
+      "fold": 0
+    },
+    {
+      "file_id": "Train12.csv",
+      "label": "Side II",
+      "sha256": "f56b0d41ddd9160bc2ef505af767876a7ab654d4ed09cc030b9257e3241a5c3b",
+      "numeric_sha256": "b9e5f756296d3721cbc008141f4c228190bdac309ef20a7d039686510460d611",
+      "fold": 2
+    },
+    {
+      "file_id": "Train120.csv",
+      "label": "Normal",
+      "sha256": "0d4efafa43a5e82b0be22510dce0eecad90c47bf70001b4d726a42ca83da7330",
+      "numeric_sha256": "facbf9915c8ffad70be8491c0c0c83ab93e38b112e46f1c6db716fe9faf603fa",
+      "fold": 3
+    },
+    {
+      "file_id": "Train121.csv",
+      "label": "Side I",
+      "sha256": "ad0d98e7586f46bb1ae37b4c9946a85ba5e4b06ebc2dedc1affb5466df126875",
+      "numeric_sha256": "3a83cd1ce1e95d9637789e92e2e7d97b7804fa6f0fc87f0db9afa761a128e77b",
+      "fold": 1
+    },
+    {
+      "file_id": "Train122.csv",
+      "label": "Normal",
+      "sha256": "7e32f9d4b18675b99310cd227ea3de698667594355983f01d1b5a7ed7674dde7",
+      "numeric_sha256": "128ca3d4ff9245c29cb9d75084cd6286b083f280422fed67349be23b6c879d3f",
+      "fold": 4
+    },
+    {
+      "file_id": "Train123.csv",
+      "label": "Normal",
+      "sha256": "867a877fd38713592885e8043146788983e34042a62c240f6782314ff30a0dd4",
+      "numeric_sha256": "c4fea916b2d8bdac85a1fd0ae2a4b7bb066d40870476b44fe15bf394f7966079",
+      "fold": 2
+    },
+    {
+      "file_id": "Train124.csv",
+      "label": "Normal",
+      "sha256": "6cfc9f2d68825e9df23ac4e98ffbb7fbdba6032b3aa049c2c588e82a7f0ccfad",
+      "numeric_sha256": "2d6bd619ac1557facc47cebc33d0999be5a0073f9f1c2b05c9941f57a6384a78",
+      "fold": 0
+    },
+    {
+      "file_id": "Train125.csv",
+      "label": "Normal",
+      "sha256": "cf80d63743e70ec0dc132cecddf444b818e49b782afb5ad2d0f3f7cbb90810d5",
+      "numeric_sha256": "97895ad6b685b41bb536fe074d48f5fa92e2f7236ca06ae7bee67c699518ef4b",
+      "fold": 2
+    },
+    {
+      "file_id": "Train126.csv",
+      "label": "Normal",
+      "sha256": "02ffb37da2283cdab63dfb26c4bb9a208f51a0a27a78ce8c57d6aa34412582b5",
+      "numeric_sha256": "67144e7faa4ba5624dfcb5ea5108adf94cb7f2c8cc4194b86bb3774baad30aa3",
+      "fold": 1
+    },
+    {
+      "file_id": "Train127.csv",
+      "label": "Side II",
+      "sha256": "8a610b993a25f856604306f822088ce09a123e55b7fb945d5a5840951aa67ede",
+      "numeric_sha256": "8273a9beae61c0c71991f5dfe4ae86af1ad9ae180d24488bb81f1b947892fb56",
+      "fold": 0
+    },
+    {
+      "file_id": "Train128.csv",
+      "label": "Normal",
+      "sha256": "00dacca2113708ce941e40272dea9ea6df03af73f9ec25b6f2624c5d7e4c7b41",
+      "numeric_sha256": "11d62c0c9833214371c5e49d6b20b85edb82f65f0669c1b30cee978eae242c8d",
+      "fold": 0
+    },
+    {
+      "file_id": "Train129.csv",
+      "label": "Normal",
+      "sha256": "62d403f6ad9e022e7acba2d506c4303ac87fb79565c0862d18f1e5ed3a48050f",
+      "numeric_sha256": "639470fb484c087dc7f2238813a1fb0178a062bd16c7c1018e40ec6fc332841d",
+      "fold": 2
+    },
+    {
+      "file_id": "Train13.csv",
+      "label": "Normal",
+      "sha256": "64802976d82b00ac878d747bea26418527068b8994c57e7488477212468463d5",
+      "numeric_sha256": "8b1445b60b91f22c77481cf5ff64804a255a841b3b4c2e0afdce0e10944bfaa9",
+      "fold": 0
+    },
+    {
+      "file_id": "Train130.csv",
+      "label": "Normal",
+      "sha256": "878263d7161b1b3a6167eddd1bd4ad969e40438f52e3d9a161c782c72d1b39dc",
+      "numeric_sha256": "4e9a9d6169013de611f97e690cd20e19f000d8b22e86dccafe1a423948062dce",
+      "fold": 2
+    },
+    {
+      "file_id": "Train131.csv",
+      "label": "Normal",
+      "sha256": "48cdf84dd407960af1ec93a2d91716adfa6cd38fa7ab5a9627d9b8d5ff286c62",
+      "numeric_sha256": "3b94f098174e7008ec17c599d9d04108f426d82d58dcb0b5e5e358b7490b49cb",
+      "fold": 0
+    },
+    {
+      "file_id": "Train132.csv",
+      "label": "Normal",
+      "sha256": "8313da432dd2bfa9edea7d83100fe5e182ac78482cfe62f3b269845c82e0b76b",
+      "numeric_sha256": "b0e2e238eb5f8bf41cbc8b09f437d398d24d086352f02c7a1c641b2e5a95dcc6",
+      "fold": 4
+    },
+    {
+      "file_id": "Train133.csv",
+      "label": "Normal",
+      "sha256": "6c957ed053b484225f6a8f5268cc448b53f8f165f22d69be5cdb510abcfaf16d",
+      "numeric_sha256": "6e9825951d378e0cbbdf133c7f1973d23878ff3b160196920e53b9f5e06e74e7",
+      "fold": 2
+    },
+    {
+      "file_id": "Train134.csv",
+      "label": "Normal",
+      "sha256": "570cbe9f913636a8557c109081a181398693d6018a165c39a775cabc458065c2",
+      "numeric_sha256": "b44503e3a06e02d0288f163d939f7f0cf58dfbfaf0687d8e1803cd251a683b72",
+      "fold": 4
+    },
+    {
+      "file_id": "Train135.csv",
+      "label": "Normal",
+      "sha256": "38979f6b92869641629d0bf3a6eeb89c05b1d56a794dc9281238cbd05521c42e",
+      "numeric_sha256": "ad6f92b9efaff905e8148f71f70520b7911b188dcdf91d65b38ecd2a69954243",
+      "fold": 2
+    },
+    {
+      "file_id": "Train136.csv",
+      "label": "Normal",
+      "sha256": "e47bce1111884e723507ac87bf5a586a5a709093ebaf5c56a8805520aa3adff4",
+      "numeric_sha256": "c32deeeafe3c284c774cf53e766930c4756011ff8e84572a3d9a320569d421a6",
+      "fold": 2
+    },
+    {
+      "file_id": "Train137.csv",
+      "label": "Side I",
+      "sha256": "46317a84afaa794ca5de9ebf7e0891fa91965bed3a91c9db6823dfd08973d20c",
+      "numeric_sha256": "ce5e1c432850b1d863ef01410cb4d01f1941ab389c11f458d4e8cb84768dd7e3",
+      "fold": 1
+    },
+    {
+      "file_id": "Train138.csv",
+      "label": "Normal",
+      "sha256": "0ebb4fc61edefdd9bbdfcc0ae8f77d9c0f0b57c567a55d3b13ec3d3e94866163",
+      "numeric_sha256": "109fae781b022bcf0d7028ac6c3022daab259f9ec484372d4da150142254fd11",
+      "fold": 4
+    },
+    {
+      "file_id": "Train139.csv",
+      "label": "Normal",
+      "sha256": "961ea3d40e81bd9e45301209d979c6ece3a84c97f728eb42c285b92732515102",
+      "numeric_sha256": "883710da20cfe5b052eb58e7a322087891c5e1f05077d91302f1e4fff24a5a51",
+      "fold": 0
+    },
+    {
+      "file_id": "Train14.csv",
+      "label": "Normal",
+      "sha256": "9ed845bfa8aa179ac3ab44d2ae47cde9d3a222d53ed31ccb921726cb17184859",
+      "numeric_sha256": "78f62010857d80c228142739dafe11de49fa1715d5d4a886df0063c95c0d7abb",
+      "fold": 1
+    },
+    {
+      "file_id": "Train140.csv",
+      "label": "Normal",
+      "sha256": "61927d700643d8bf3226bc61376f0d4a4ef92ebcb69e0ddbf9961817309f452b",
+      "numeric_sha256": "9e1e1d366b3282d8dd9f6e6932fedd2bb87ce58650773e3f76ee2016d0e56c7d",
+      "fold": 2
+    },
+    {
+      "file_id": "Train141.csv",
+      "label": "Normal",
+      "sha256": "03872d3908c687a38a9df16a2706ece5fd0dd1a7bcb7f55a41d7abfc849c59af",
+      "numeric_sha256": "4a485c47b60a2594d890bf971aeb4f6bddc9afa643da40d3a3cba24a3a338724",
+      "fold": 3
+    },
+    {
+      "file_id": "Train142.csv",
+      "label": "Normal",
+      "sha256": "f1fa49dabc64a7ea82a91d041f587f73a0a432966e0c5c682533eaadbde70161",
+      "numeric_sha256": "dcfbc5a557465f270b7ee16098062dbc346b2c8ca726f18c9cb46b03ddea6fa4",
+      "fold": 3
+    },
+    {
+      "file_id": "Train143.csv",
+      "label": "Normal",
+      "sha256": "eb9b704ab47575f8c70a8da31da41144728f4e7199a0d4d1d66e69d05f490217",
+      "numeric_sha256": "12b8a4f8e3001553f062eb018f89400ddabbaf9b5616bad8ecd198c2c48f3443",
+      "fold": 3
+    },
+    {
+      "file_id": "Train144.csv",
+      "label": "Normal",
+      "sha256": "c8ae8bcdba4396e99de0334a4f85df3578e92078d4c749ee3065a5fc261b83a6",
+      "numeric_sha256": "6f3495ab2c9d0e43da4e29f8061006877443061f734f6355b98b9b40072acb70",
+      "fold": 1
+    },
+    {
+      "file_id": "Train145.csv",
+      "label": "Normal",
+      "sha256": "0f016c563379ed16171ac94ff251d395d21bc6cf80253e362d036dba1ca6c77b",
+      "numeric_sha256": "de78e490090790b487f85390fd8e9d9f7841ce1af94217d5e76150c677b2765f",
+      "fold": 3
+    },
+    {
+      "file_id": "Train146.csv",
+      "label": "Normal",
+      "sha256": "7abd5a9dd7ebad66085dc608966772b77a1862fa57017cd841cc1d0ae3a5e8cc",
+      "numeric_sha256": "d747ccfeedcbacb32e8cdb9244daadd74c38b96b1f9cb9454b9e089fbd20efce",
+      "fold": 3
+    },
+    {
+      "file_id": "Train147.csv",
+      "label": "Normal",
+      "sha256": "2d602e4998ba54f39fbc3778fff3632992a2d7b2fc7b6ba8d1edfa4c4699f4d3",
+      "numeric_sha256": "3556c3f1815633c3ad0e312b1c8ff35fa75e1ecb41150a31d770bac529a956db",
+      "fold": 3
+    },
+    {
+      "file_id": "Train148.csv",
+      "label": "Normal",
+      "sha256": "f899836f2aaf46417c3048e0672f7837eb850afed987c11381b76e3b17459a9d",
+      "numeric_sha256": "1a349e762521791db390ec3247ec9fae349e5577237667cee6bc0ccf24f7a508",
+      "fold": 1
+    },
+    {
+      "file_id": "Train149.csv",
+      "label": "Normal",
+      "sha256": "f0fe364b408c1d5fc76f7567e1c178774b2712ccd5b847539b79f338ff02fb60",
+      "numeric_sha256": "44c92313ae6a40baee262452f4ca0f40ab7a801481f878b5a53960a2c85ec770",
+      "fold": 3
+    },
+    {
+      "file_id": "Train15.csv",
+      "label": "Normal",
+      "sha256": "c12ecca8f0da6bbdf05f7136d340cfa5e4c6cece8703985829f71ee96f100f03",
+      "numeric_sha256": "50cf056ee46bf76446925ba2b4e85490b08b1c4f511f4f062e1630d2eff92f66",
+      "fold": 0
+    },
+    {
+      "file_id": "Train150.csv",
+      "label": "Side I",
+      "sha256": "db3dcd523b58914d6b0081e2ad15a87d5d9563768497454d248446afb46e90dd",
+      "numeric_sha256": "302875e85d3f982e3a1763602749a4fa89c6a285c75e5cf53e2cd9323ed33058",
+      "fold": 0
+    },
+    {
+      "file_id": "Train151.csv",
+      "label": "Normal",
+      "sha256": "2d961811de360ad74fe162f5ac907b22acf84d2072e5185c746a97939f47b5ca",
+      "numeric_sha256": "0327b252ea074644baefaf4546aee43be94d6c65ff17c8b54275b61d42e5ef2a",
+      "fold": 1
+    },
+    {
+      "file_id": "Train152.csv",
+      "label": "Normal",
+      "sha256": "6bea2b94bdc21f39998ebf7c535826127a9a1c706b6c9c3f0c8b05f30b74db41",
+      "numeric_sha256": "597a577c864298ea7aa1e16e8301de68f9c30d1f57e63401e929888787b9f0de",
+      "fold": 2
+    },
+    {
+      "file_id": "Train153.csv",
+      "label": "Normal",
+      "sha256": "971ed34781c3aadd21639138ce702f9bf9dc337387f231226938041407716eca",
+      "numeric_sha256": "6d934f9f577a848621b83ac8b112bda544e2e43d67019599c44308a652ec9191",
+      "fold": 1
+    },
+    {
+      "file_id": "Train154.csv",
+      "label": "Normal",
+      "sha256": "d446ee2caf43f1a6dc5cd79572df79332e5237e93f4f762f47d646a32b3b124a",
+      "numeric_sha256": "008358fb6469bd39d8cb5303125d40c542d3254a0818c70b70f12b16b65b5370",
+      "fold": 4
+    },
+    {
+      "file_id": "Train155.csv",
+      "label": "Normal",
+      "sha256": "ef64d6568fa601dbd57514925b464def41871b3304923c5c976100de5949cf51",
+      "numeric_sha256": "2a1f10c7cb1af5bdfe417d963c5a652887069626d90de63603cd91198e3eb0d9",
+      "fold": 0
+    },
+    {
+      "file_id": "Train156.csv",
+      "label": "Normal",
+      "sha256": "bc2b6cae2b66fce7fd54ab4b5d3445b9586645d86dd2766ecd1cd5a3ab8a0626",
+      "numeric_sha256": "06556b35379d3800e5df4e4b1b29849c9c9ee3bb215dfd28a8d91ca899a087f6",
+      "fold": 4
+    },
+    {
+      "file_id": "Train157.csv",
+      "label": "Normal",
+      "sha256": "7799d9e37fce5cab10f08457ae045e803d23284a0533ed206719ee8a48fc8bf3",
+      "numeric_sha256": "0d093e41d49db24562a9bbe604ebdbdfe85a032f2eb43c7e905b227896ec7cfa",
+      "fold": 4
+    },
+    {
+      "file_id": "Train158.csv",
+      "label": "Normal",
+      "sha256": "f765aff1878562aac6f0d53a226d13075c5bd3b0c79d8d606767b3468f169ba7",
+      "numeric_sha256": "b723ebe4e948b1adca4fe8054192a9c8a4249677cdf41a0994a700d1c9713906",
+      "fold": 4
+    },
+    {
+      "file_id": "Train159.csv",
+      "label": "Normal",
+      "sha256": "f70f3138f6e57f7ba6af575e52ff3b36ea7010d86b129d471fbd5e22288d3428",
+      "numeric_sha256": "dfdeb10ec0e197b6f15521314a86d15425d098d7243678d9ba174f4bda8f00f8",
+      "fold": 3
+    },
+    {
+      "file_id": "Train16.csv",
+      "label": "Normal",
+      "sha256": "305669d08871e156454d6871a219124d910b96683713740c908c85b5ad0885e7",
+      "numeric_sha256": "910437618a4dddf8a735358d76c7ff4825482b3f13a782416beeb43abb6a8043",
+      "fold": 1
+    },
+    {
+      "file_id": "Train160.csv",
+      "label": "Normal",
+      "sha256": "bbbba10d259fad55aa6ab44de702c9090d1904d47543d4de0e6be692a99ca6b1",
+      "numeric_sha256": "beb937d74b40479a20dafb69f01dbdaedc9673c03498c91579a5466c9889febd",
+      "fold": 1
+    },
+    {
+      "file_id": "Train161.csv",
+      "label": "Normal",
+      "sha256": "ca9ace64d47e9e2a6c04769150c5a9f8ac2b22ddbb0e60df0f490a84435339a8",
+      "numeric_sha256": "f5e0e3eade726ecde840fed3a7dbfb739d2c61195936819c234d767d964e05e4",
+      "fold": 0
+    },
+    {
+      "file_id": "Train162.csv",
+      "label": "Normal",
+      "sha256": "700d482b7a124e4a3d3e9a3ff58159e93846369924d51fe39aa51ae7c0a5ef66",
+      "numeric_sha256": "f40ba989a0bff585d6c1eb865c043970a1fbfe746dd187687dacb8f4382fa74f",
+      "fold": 1
+    },
+    {
+      "file_id": "Train163.csv",
+      "label": "Side I",
+      "sha256": "ad9c7c94e9c70fb93401431454250b4fc20889bd6b7803c7e8207fb8dac230ec",
+      "numeric_sha256": "fbe5151538e8bc71a01674bd832e55ae0bb84a12cdbf53638a96378e9b5acf18",
+      "fold": 4
+    },
+    {
+      "file_id": "Train164.csv",
+      "label": "Side II",
+      "sha256": "5dcd45dee5bc759b695b587e0b3e5f1ef622757897ca929c72141d736bb39bbe",
+      "numeric_sha256": "12c2a71d0ee6f1c8eca802a51e6fbc5ad8ac7c177affc7a833788ae5b37927e0",
+      "fold": 3
+    },
+    {
+      "file_id": "Train165.csv",
+      "label": "Normal",
+      "sha256": "0ad5eea9356690c784e932846b0422ec494c5733653f7be4c2774dcca0b0fa1e",
+      "numeric_sha256": "2898adc5b199103ccf123c67870614cf50a221e4c1be3e5c73ca27d2c15fda63",
+      "fold": 3
+    },
+    {
+      "file_id": "Train166.csv",
+      "label": "Normal",
+      "sha256": "d51856efd494fd0f579366ef11cb58c8db63910e1aad5a878e630c55dce278c3",
+      "numeric_sha256": "63c64036e18939c79e7a0c6ca64418c6c72b7427170b4cf3a9518eca9796b134",
+      "fold": 2
+    },
+    {
+      "file_id": "Train167.csv",
+      "label": "Normal",
+      "sha256": "0e70d49aebf49c2d6cc4ba6881b121d08e894f96fc1a7d5c3084415717d41d64",
+      "numeric_sha256": "da2886a3f1fddba6215f05074030dfd953a2779304b65d465cd845a9798383f2",
+      "fold": 4
+    },
+    {
+      "file_id": "Train168.csv",
+      "label": "Normal",
+      "sha256": "7ecd82c7656b6e6c1123fe71c1db27f5a80be0cacc2b8e3482e4dec47b9b3596",
+      "numeric_sha256": "ba682084ea7a9aa29da4bce1f7f4c34e872a667ea63a709f24e1698f02c1b051",
+      "fold": 2
+    },
+    {
+      "file_id": "Train169.csv",
+      "label": "Normal",
+      "sha256": "d40ca6916a49fe0387b83b5b615da63e431949fcabf224575ca002897040b8aa",
+      "numeric_sha256": "d95f7e6dab6616eea103295df5a86778ca4151c99d6c297ce3818e9b45180500",
+      "fold": 0
+    },
+    {
+      "file_id": "Train17.csv",
+      "label": "Normal",
+      "sha256": "6247295e084391fa8270f3d86196ec2441e97785a8beec2c407aff95eb3a7349",
+      "numeric_sha256": "ec8385e38e6a225c656e5ef2b38293014fdb832743605c7381fe68486b2b3836",
+      "fold": 0
+    },
+    {
+      "file_id": "Train170.csv",
+      "label": "Side I",
+      "sha256": "e4d670390199d5809898e7738813539ab4aaa7cb719b1047645ec30b127b8407",
+      "numeric_sha256": "b5d1a294b3ab84d4e9faac2411e45a97829defe7bd537bde59d26a891d50a90d",
+      "fold": 2
+    },
+    {
+      "file_id": "Train171.csv",
+      "label": "Normal",
+      "sha256": "5048a55865ad352cd25a427f08d447375ec0f076788ddff010bc85e6ec6fc375",
+      "numeric_sha256": "bd72450a8a69c55ac23deac0ed60730723353a2ef2f62970694071a96ff4726c",
+      "fold": 1
+    },
+    {
+      "file_id": "Train172.csv",
+      "label": "Normal",
+      "sha256": "2816a83b1b4fbd91e27f3e03edf73dfc70eae5aa009960d2656a8f3e26761f9e",
+      "numeric_sha256": "5b49464a529a652f2dbab373fb6d1ecf10ba739ff6d8d86aeb604b09c9f033e5",
+      "fold": 1
+    },
+    {
+      "file_id": "Train173.csv",
+      "label": "Normal",
+      "sha256": "40ff5106f8117e7f0c443c621ecf8d9bcee5b77cdb7bcd59ce2ae3242263cc50",
+      "numeric_sha256": "bb3b587e11f600ced46ba16035db56124980ee6ba0d410e87b9c042ae9138921",
+      "fold": 1
+    },
+    {
+      "file_id": "Train174.csv",
+      "label": "Normal",
+      "sha256": "4f76fd1cc01a391b8fa2718d3b0ce496a2fb18c9ad1207c692ae8b668b6d8f98",
+      "numeric_sha256": "96494f4e8df598bb3dc8a86035e3976fb03acc834d28ab5ffd598c8c98ab4eb8",
+      "fold": 3
+    },
+    {
+      "file_id": "Train175.csv",
+      "label": "Normal",
+      "sha256": "9e69c38995735a6a2fe488ca5e7d892e27d98ce916d8e412f9664b729fe0b70b",
+      "numeric_sha256": "21eb74976944119452c50823a9e7fd987a4b3c8d2c536a93ecbde045f440b07d",
+      "fold": 0
+    },
+    {
+      "file_id": "Train176.csv",
+      "label": "Normal",
+      "sha256": "19cacaad41c14c219ca842f9d289867e6074d4b881960d16d30abe954e2b9ca3",
+      "numeric_sha256": "7bd8ba211ec318939b1b3230e858e636187a1e7aba1f470965ae3a2ed5c193c3",
+      "fold": 2
+    },
+    {
+      "file_id": "Train177.csv",
+      "label": "Normal",
+      "sha256": "7e16a91d8aee430087cc6640b3f76985c2c201cb7054ebb99c9162c88f7896ff",
+      "numeric_sha256": "5a968f200ea2d964f98936ef099a8b661c932eedc42f3e8351c866b2eb76ce54",
+      "fold": 0
+    },
+    {
+      "file_id": "Train178.csv",
+      "label": "Normal",
+      "sha256": "998f5e1c0cb9a975b83d5ddeb5d0cb8ce0acc1ebe0ff4b9e2e816882d3e3eeb1",
+      "numeric_sha256": "6d52b1c39bcc5e5997c88e3009f50d4bf8b2a44eb1e460533e3956af577a8844",
+      "fold": 2
+    },
+    {
+      "file_id": "Train179.csv",
+      "label": "Side II",
+      "sha256": "6a95259a39b662b9bac53c177ab210406257d4feffa97599e8863936b58a54e3",
+      "numeric_sha256": "6a053e9b9108b8e1f3bedbb623d52336594ebe849e7087651d46573b66a9ea75",
+      "fold": 0
+    },
+    {
+      "file_id": "Train18.csv",
+      "label": "Normal",
+      "sha256": "56f3814b1d5bc1a2b029428e72758131841f19e9f1824febdca630c38273b96f",
+      "numeric_sha256": "c2ac67e3ae22ce808fede90ad749a7319bb562e7009dbae2b6837b8032ae0fd1",
+      "fold": 2
+    },
+    {
+      "file_id": "Train180.csv",
+      "label": "Side I",
+      "sha256": "5ba180893c2f2e5f1fc0d6a81625315a525459e02848b0d4f3ebd1dc8b87f02c",
+      "numeric_sha256": "18d8fb9203d6e6342462a5b5bedba558429f6fde4bd539c2a997a332ee49a186",
+      "fold": 4
+    },
+    {
+      "file_id": "Train181.csv",
+      "label": "Normal",
+      "sha256": "4f45c5eb65f65811a4a223056aa6fd074e4d937293ab70ac239a7632836d031e",
+      "numeric_sha256": "ed4e1cf88536f8fe3c1f75fa0951977c669bc7236422ff204199742cc533cd44",
+      "fold": 4
+    },
+    {
+      "file_id": "Train182.csv",
+      "label": "Normal",
+      "sha256": "291a4ffad20c28240aa4fc19b4240d59b9deaf1a492cb5ab820804061da060c4",
+      "numeric_sha256": "149c1882c4a012a943889913bb17dd96143f1e0761194098d6baf5e303ae78a6",
+      "fold": 1
+    },
+    {
+      "file_id": "Train183.csv",
+      "label": "Normal",
+      "sha256": "af9816c740c5b4a165002407de8e0b3ee391ecbe0ac97afca84d70f859d8865a",
+      "numeric_sha256": "61dad1ab3d3ffc14e41cc6518f9bb63ab52b6e41607550f5b34c451867f6c9f5",
+      "fold": 0
+    },
+    {
+      "file_id": "Train184.csv",
+      "label": "Normal",
+      "sha256": "894151f88a594672e259954a0e827ff837d4c87108841dca17a9819118bd3ec2",
+      "numeric_sha256": "af55b9bce5f473596f7a6de3157970b48996c6910089b4e80c7c9c15b0c584d7",
+      "fold": 1
+    },
+    {
+      "file_id": "Train185.csv",
+      "label": "Side I",
+      "sha256": "48c393ab387ad36719e5cd7aa2ae571fedcf1ebbb157095c71482a29c21ca3b5",
+      "numeric_sha256": "a46a22a0869091ab4ef3f837d3af7e242ef54c2fed438bc98267c345685cc40f",
+      "fold": 0
+    },
+    {
+      "file_id": "Train186.csv",
+      "label": "Normal",
+      "sha256": "15014970e1cbf216a7bac971355bf47a78a6d77432fac222b5d2b88523c44170",
+      "numeric_sha256": "630a149bc1d4f7efbc35b8752c50188915ba7a6ab6ac1e2dd55e11636ab4fae1",
+      "fold": 2
+    },
+    {
+      "file_id": "Train187.csv",
+      "label": "Normal",
+      "sha256": "0ad5eea9356690c784e932846b0422ec494c5733653f7be4c2774dcca0b0fa1e",
+      "numeric_sha256": "2898adc5b199103ccf123c67870614cf50a221e4c1be3e5c73ca27d2c15fda63",
+      "fold": 3
+    },
+    {
+      "file_id": "Train188.csv",
+      "label": "Side II",
+      "sha256": "05d339b91d7e354624a1070e8aae8f4651a1e34fc5a141e51789bd8eedbd9170",
+      "numeric_sha256": "bb193e8e2b40ce35aacb2fe9a12950fae97fed9e1fe5382e1d052e12e6ca6bc7",
+      "fold": 1
+    },
+    {
+      "file_id": "Train189.csv",
+      "label": "Normal",
+      "sha256": "44ed9ddb304dfffcb9f6db872e667a3e6b23768e6916e034276baa4eee0fa914",
+      "numeric_sha256": "8c24d99efbbc0603c7f32bd5ded15a2a816d2c0a5529a5bf86a8c4c578ccbccc",
+      "fold": 1
+    },
+    {
+      "file_id": "Train19.csv",
+      "label": "Normal",
+      "sha256": "b78a77e9f79d9c65058e3167d4129fbd8443655b53b0d2e382937026dab95bd4",
+      "numeric_sha256": "d74dd84a67e7c145323c3d567547f9987e552141382ea3a89f5506fb4a09fce8",
+      "fold": 0
+    },
+    {
+      "file_id": "Train190.csv",
+      "label": "Normal",
+      "sha256": "9dfebf4df5e8b056ca06bf0623b0fbdbf72d7a93e345a9ce9d14d24758525b54",
+      "numeric_sha256": "af5996494d045e7d40cc161b716adb643a07ea3396e1a850520397b6f2f7b51a",
+      "fold": 3
+    },
+    {
+      "file_id": "Train191.csv",
+      "label": "Normal",
+      "sha256": "9703c959f19b53b54e0e4972ccdde08375d73e411b1eb842027b5d990feff045",
+      "numeric_sha256": "d42d22094cc20e69db87727b1c9165ec9b39605ed9f116cdc7b8db4338ebd215",
+      "fold": 1
+    },
+    {
+      "file_id": "Train192.csv",
+      "label": "Normal",
+      "sha256": "2f3a7999f5eec417a7b041d5e73213560a22c60b675b7720c017b71467570f0b",
+      "numeric_sha256": "e0c7f152f3587e476a9699028cb6ef460e36796729b4b6bb260cf70a0ae0acbd",
+      "fold": 0
+    },
+    {
+      "file_id": "Train193.csv",
+      "label": "Normal",
+      "sha256": "e0b332d27ccdca91ee464dc9db369dc80966e248f83ef30e5d234af91c47c2d0",
+      "numeric_sha256": "26e564b99e71e637979bfc8f702709b2e06009e47a5396ad3784432c6541cdd1",
+      "fold": 1
+    },
+    {
+      "file_id": "Train194.csv",
+      "label": "Side I",
+      "sha256": "0457b8fd53f66ee8d6cf01e63018faccdaec548c06fa9d16ac1bcaac444c232b",
+      "numeric_sha256": "d6bcf2a9b55eb14136c5094b79c6b09c3cee1176bae43f91df74597e5aaa5704",
+      "fold": 3
+    },
+    {
+      "file_id": "Train195.csv",
+      "label": "Normal",
+      "sha256": "6ef86c270c9dab95fcb15412a7658ecc22b1dba3cf94c445110282746249250e",
+      "numeric_sha256": "13e6ac36619518979a2d93f39fd63e30d2f1247bd09d3d858b076cd55a58d4d5",
+      "fold": 2
+    },
+    {
+      "file_id": "Train196.csv",
+      "label": "Normal",
+      "sha256": "b8c8c8a98858e2127fe34e48c2897064e3907d6f4caf40aa2bb7657532683527",
+      "numeric_sha256": "175dc5841562db43d12c63ff919f08fcebd47b97d35f34212f1cee513dcdca2d",
+      "fold": 3
+    },
+    {
+      "file_id": "Train197.csv",
+      "label": "Normal",
+      "sha256": "c01bb2f30b1d9e511cb0d8a87e81ef45fa7f10d217b411ba178abaa7e7c7c629",
+      "numeric_sha256": "0aa5d95d0c4ee4e88aad3778c1298cf5a824a9425642d467be9ee9e0f01e3f78",
+      "fold": 2
+    },
+    {
+      "file_id": "Train198.csv",
+      "label": "Side II",
+      "sha256": "e0fb09a51c38c8d6b616a40fc22af48213412a07f72e240f094f65d18bc0bf46",
+      "numeric_sha256": "e5b8e5609ff2ef0da938ea0f923eba48484982d1494a532fc190429026b36dd9",
+      "fold": 1
+    },
+    {
+      "file_id": "Train199.csv",
+      "label": "Side II",
+      "sha256": "28bd5414aa666a4408ab0b8bdd1975609bfff29e4e05d61e99165bb213495c6e",
+      "numeric_sha256": "1da5b41b1657719b68e1f5e2f12490d0d83c0a75d04e2637f14a0748eb4177f8",
+      "fold": 0
+    },
+    {
+      "file_id": "Train2.csv",
+      "label": "Side II",
+      "sha256": "29493c7f6bc539b6c76b390bb63bc39c9d37954e3e3415d82433300e0bcd397a",
+      "numeric_sha256": "2ffe68eefa00eb4383df37089d77f6793a1c6068c7382a39a480c227f1d34c9c",
+      "fold": 4
+    },
+    {
+      "file_id": "Train20.csv",
+      "label": "Normal",
+      "sha256": "26e8b87fa7693044da626bb8c2d84b9c56238ed5f94bfb25b8559f32da3213d9",
+      "numeric_sha256": "b5868c30eca0488e71f2b6791f8ee576b730f10e6e532a423190ddb283b9766a",
+      "fold": 0
+    },
+    {
+      "file_id": "Train200.csv",
+      "label": "Normal",
+      "sha256": "3bb12b43a7b00e76dc357e295f0a7521e6396435f83e49d8c75c216b52900fc7",
+      "numeric_sha256": "0b1797096135053b16d5ed4f4aaaeef7407ac5fe92466be23847745e42fa4f98",
+      "fold": 1
+    },
+    {
+      "file_id": "Train201.csv",
+      "label": "Normal",
+      "sha256": "085e491d2ed2f763d42aad36b720893497de060ace9d9637c4d8ad66ce6063e4",
+      "numeric_sha256": "90350a9b6673ecf60b63e1a1dbd82054ada02c09dccc150b30c4e863d79132ba",
+      "fold": 1
+    },
+    {
+      "file_id": "Train202.csv",
+      "label": "Side I",
+      "sha256": "c5e8536408fb0eaae0089f582dc1fb689e2b6b506d3f0b19ae0ae3373234e7eb",
+      "numeric_sha256": "456384454f434d36004f3cc31483a2c3de750f87339992eff698b166de9ef9ef",
+      "fold": 3
+    },
+    {
+      "file_id": "Train203.csv",
+      "label": "Normal",
+      "sha256": "5ff88ecbdb02c12958af442aaf69f64f132a382199601722fee83b04f3e125ec",
+      "numeric_sha256": "65ac020dbf6bf23d9e9e23958ceb04ae16e83e368071d5027a3196282eb84ad5",
+      "fold": 1
+    },
+    {
+      "file_id": "Train204.csv",
+      "label": "Normal",
+      "sha256": "b1e07c97b252c2bd1957d5db7281034698bf2249051884b53000d5bbc9306d72",
+      "numeric_sha256": "52bdb929b7747b0f473c9a8f12e439b66b1e200e723e694a9a57c7c4f674bfcc",
+      "fold": 4
+    },
+    {
+      "file_id": "Train205.csv",
+      "label": "Normal",
+      "sha256": "eb2bce7d7a0067148573104c4a6d3e8e2cb723365c0ee3f39831dea7db468d99",
+      "numeric_sha256": "7a1e11cbc3f374334556a8dbe9c2c2d1811b69c5bced0f847f148bb6074f9ed6",
+      "fold": 1
+    },
+    {
+      "file_id": "Train206.csv",
+      "label": "Normal",
+      "sha256": "f109abdf3ff3086fda2cdfdd09ccef5c3cc02eade58d61095b91b0d7b9d291f3",
+      "numeric_sha256": "bd75181146a3d84090cd4b99073a5f1ee71f64864e2e028d0f02204edf7406ad",
+      "fold": 0
+    },
+    {
+      "file_id": "Train207.csv",
+      "label": "Side II",
+      "sha256": "14c18ec4cb256e4c1192fe4e2dcbcb6db191d650e26927677f6577b997c32259",
+      "numeric_sha256": "e32a7ce5781b18cfd0b6c0c8880cb6d08038946bbc05b4d667761d8e672bd839",
+      "fold": 3
+    },
+    {
+      "file_id": "Train208.csv",
+      "label": "Normal",
+      "sha256": "bd86894c5b725c74ff5c017a59369268ac5c9c9e1c2a297f9570c86dcba3f413",
+      "numeric_sha256": "0879133246ff98f5e4196a5bd453a81425a47202f8fcdc5e84ccb85df0723b9c",
+      "fold": 1
+    },
+    {
+      "file_id": "Train209.csv",
+      "label": "Normal",
+      "sha256": "d903de91e1b8d4b5e9531fe7ea0b0e2d37edb0d73ed48d768320b0331bb937c2",
+      "numeric_sha256": "ec23d2171034bbd6dc2c076354e179e35a0a92f48f195d5be7f331567e3f9f33",
+      "fold": 1
+    },
+    {
+      "file_id": "Train21.csv",
+      "label": "Normal",
+      "sha256": "793521d853f8ada7c963f7a2f4bd50a782e5973f57a397f02b8e93db0735d1a1",
+      "numeric_sha256": "e7c47dfabd3c975725fd22bfe7f1b148c351e072e6a332931697dbf6724cb8c0",
+      "fold": 2
+    },
+    {
+      "file_id": "Train210.csv",
+      "label": "Normal",
+      "sha256": "8a6277044df3ca20fcd43a12728cabdd8674e279296914c9c15be57b9047479f",
+      "numeric_sha256": "2159b9785656e98fa847c773087541bae6cc64d692eb4200a3884a6894218e23",
+      "fold": 2
+    },
+    {
+      "file_id": "Train211.csv",
+      "label": "Normal",
+      "sha256": "8456534358c92f7062f9f7d05b740baa07623496aa6a1fb632cc797ea1db03f8",
+      "numeric_sha256": "6d6cd5478953b20e2e0bcf941b6dc8ceed3d9d86ddedb294845f91c36d6e40be",
+      "fold": 4
+    },
+    {
+      "file_id": "Train212.csv",
+      "label": "Normal",
+      "sha256": "aadd895f698134bec0e88e5a845b0402a3ac57d713edcad782f407c3f9686938",
+      "numeric_sha256": "fa57667a125eebf12c4051f81a04c5be27d28dce8ed0e7edcab4fe5cd2c4a47c",
+      "fold": 1
+    },
+    {
+      "file_id": "Train213.csv",
+      "label": "Side I",
+      "sha256": "3f49bf4e864f8fb46f9ee86465ce6b514e57b39afb33b8dee5c28d310c725137",
+      "numeric_sha256": "d51039fcd8b26b0c5b640c8215a27e9ab163f3e4e75455b1e884d80ad3c3759c",
+      "fold": 0
+    },
+    {
+      "file_id": "Train214.csv",
+      "label": "Normal",
+      "sha256": "99ad04a6edb745d3b8d79bbe7f6eb246545820927e288e0bc488b44dcb4a3005",
+      "numeric_sha256": "f2dcc674ae8dc35e5823d93b95e1476d9ae894c5c1b595b0caf2d36771fa79af",
+      "fold": 0
+    },
+    {
+      "file_id": "Train215.csv",
+      "label": "Normal",
+      "sha256": "9a6a01553e3ab78784205f394b4c5c71078e86f17c30340455d233fb556a4504",
+      "numeric_sha256": "3ec34626f48b974c17f9bb409f96eb6b34ea513cbcc666a287527ef6f58bb3db",
+      "fold": 2
+    },
+    {
+      "file_id": "Train216.csv",
+      "label": "Side II",
+      "sha256": "70c4013d5144907413dd6f32b388105eca971ba439c77891b9b32aaddae6d120",
+      "numeric_sha256": "7509ee94cbdc10ddd68ca33414adb6e30a811581fc8cf38e1592b34e7f675474",
+      "fold": 4
+    },
+    {
+      "file_id": "Train217.csv",
+      "label": "Side II",
+      "sha256": "cc127d3907a6d65ddf3e693fd1a50141f01df1615d80022aaab29b932341df5b",
+      "numeric_sha256": "b13fba455cf1c33a62b6108e679b2f0cd73e6acde2bf5d812f61dac55b30e535",
+      "fold": 0
+    },
+    {
+      "file_id": "Train218.csv",
+      "label": "Normal",
+      "sha256": "36948d54ce0982e3bfa7872d214f79cebba79f88955d82d17098009d687509df",
+      "numeric_sha256": "85116575ab2388f23dc9eb36ada793fe762ad259a2d7b5219636ebfdca36f608",
+      "fold": 4
+    },
+    {
+      "file_id": "Train219.csv",
+      "label": "Normal",
+      "sha256": "894027406dbc88f991312d2047e7157fbdb4238b86885312406f13e3ccbc6c39",
+      "numeric_sha256": "df8140e3c6ec98f2adae0d05be9e0597bda84a2d2cfa731c056dd74e7e360886",
+      "fold": 2
+    },
+    {
+      "file_id": "Train22.csv",
+      "label": "Normal",
+      "sha256": "36a8816501aeb148fdac0ede0d6a54c6b685ef281856ea5a3bb97cd84a4b74a8",
+      "numeric_sha256": "58336a4e33ee189ccc3a5241626fcc477f173120825eafcb38bf01b27e6a67b6",
+      "fold": 3
+    },
+    {
+      "file_id": "Train220.csv",
+      "label": "Normal",
+      "sha256": "32307dc0d89184a2ca2a92048692b324c21cdd5fa3963a51c7f5d05715255cd4",
+      "numeric_sha256": "0d22fd5be69d3c76852197dd79beac8cae5692731ab75c1231d8fe104fe21a0f",
+      "fold": 0
+    },
+    {
+      "file_id": "Train221.csv",
+      "label": "Normal",
+      "sha256": "a6504935fcb004fef6e7d94e0e53539505438e42446ec382e68d4d946350c022",
+      "numeric_sha256": "f620807b7211f60de76958f77a8bd5fd43bc852279f37b81a241cf68b5aa8d98",
+      "fold": 3
+    },
+    {
+      "file_id": "Train222.csv",
+      "label": "Normal",
+      "sha256": "f1368dd1c034d78feb70e0484804cba1ad86f2fd0606877a6ec37f17c512cf77",
+      "numeric_sha256": "8588fab7746d64229bf53d34ba7aed1607f351dafa21dbabda0ffeb8b4cc8e5c",
+      "fold": 2
+    },
+    {
+      "file_id": "Train223.csv",
+      "label": "Normal",
+      "sha256": "d53610d13e34ec1faec111aa3fd907bcfec0db7522286b9cb4d9dd3bd5068bfa",
+      "numeric_sha256": "c621ded6fb6a8b587beec7c44234fbf362445da35919fca118f3ca4abe7cd977",
+      "fold": 2
+    },
+    {
+      "file_id": "Train224.csv",
+      "label": "Normal",
+      "sha256": "be6e63e7782a0d28b8fcfcc3d1f9b3aab692bce4eeb7bbbecb03999c38a673c9",
+      "numeric_sha256": "92a7fc728a8ef1d11a9424e0d004afdbc87b261a3b18f31b2748f3a10efacf43",
+      "fold": 3
+    },
+    {
+      "file_id": "Train225.csv",
+      "label": "Normal",
+      "sha256": "4fd4ab49235ecd1ee9cea6d408a406a1b1d6d1d90b4a6b672d6a327669cb9441",
+      "numeric_sha256": "34e95b69196c693e80f67642e0828d75382a5ea789f5e3a42751c4fd27690774",
+      "fold": 2
+    },
+    {
+      "file_id": "Train226.csv",
+      "label": "Normal",
+      "sha256": "047764576b49baf625e48bece1232bd0f48899562d1c13fc127fe7f1b7053419",
+      "numeric_sha256": "c17642057c228caaa43e14dae3c714fe12cbd23aca9eebd68d4cfa7ddbd9d2af",
+      "fold": 3
+    },
+    {
+      "file_id": "Train227.csv",
+      "label": "Normal",
+      "sha256": "c1ebc704f331a50aabb9c12c79935bf8bfb853ac7b4f87315f10183642aecb91",
+      "numeric_sha256": "4a9460a3870bb27cb26937dc89d791c8e09007f339d6a35a64b2ed4ed7392eb8",
+      "fold": 1
+    },
+    {
+      "file_id": "Train228.csv",
+      "label": "Normal",
+      "sha256": "00e7b8d9b1d459fb6ed0531075b5d15efadcca9ea149576a2f256ed29fcd93ce",
+      "numeric_sha256": "cb465b947b1f8099561bf9cdd6bfaf1d6c392c8bc093a0cd65ab520fd1837068",
+      "fold": 1
+    },
+    {
+      "file_id": "Train229.csv",
+      "label": "Normal",
+      "sha256": "db4f2484be81995fef0b41ac732285060c792cb6418cb172ea42fcc817d49f42",
+      "numeric_sha256": "f4023400b6a349375c8088f7321c386d5c0a9725f3d7fdfbf18b266fccd8263d",
+      "fold": 1
+    },
+    {
+      "file_id": "Train23.csv",
+      "label": "Normal",
+      "sha256": "ff45318da28ff034d85dd49d65b7704161e6b5d707ec4cd2f9e37a29e504962c",
+      "numeric_sha256": "aa049f3ad56ffc943790d623322189bb5cde1119f914d76610e8bfff0302bfc8",
+      "fold": 0
+    },
+    {
+      "file_id": "Train230.csv",
+      "label": "Normal",
+      "sha256": "eea8074daeb608e35e9a323bb9e1831778046aa5a4ad76072cfc76ee994ca62a",
+      "numeric_sha256": "e27862e89248822027142024405f71015103c4f76b7e24b62d22caa8f596a6ae",
+      "fold": 3
+    },
+    {
+      "file_id": "Train231.csv",
+      "label": "Normal",
+      "sha256": "44be1c3c8b46a9002abaa36582c72611ffe619bb8e85b96afc5ac97f44f6cb16",
+      "numeric_sha256": "75247c5080c7229c1590a6fbb64eda7276adf61187c1265cde671f3f57f15a41",
+      "fold": 1
+    },
+    {
+      "file_id": "Train232.csv",
+      "label": "Normal",
+      "sha256": "bd4c10f8e031ef83e912e21e2e5b89a01e3ba19bd6cd690374fb9d70988c9ca1",
+      "numeric_sha256": "687d6384f58ced451969c5294b89d6a1c17cd3bba5c8588d89bdad33f596a907",
+      "fold": 2
+    },
+    {
+      "file_id": "Train233.csv",
+      "label": "Normal",
+      "sha256": "c462514eb5d8dfd83fd6a5a98bf425fa54a38acc4e833c7ced78d321f44462b3",
+      "numeric_sha256": "aae82abc54c13980f7618a4fc77e6db9ed79865a9b6b0540cccfb5774f50d977",
+      "fold": 3
+    },
+    {
+      "file_id": "Train234.csv",
+      "label": "Normal",
+      "sha256": "eba59a2adce4f0d3ddf8c1abac51e3fc2fa8bfd2db4028f8a2c99328a6dc8c8e",
+      "numeric_sha256": "1a4caf4fd02aa8f41e5ee2df73deade0820f206db6e8daa9d2a7036dcc32cc29",
+      "fold": 3
+    },
+    {
+      "file_id": "Train235.csv",
+      "label": "Normal",
+      "sha256": "00a96db083984505c482eb09193f3d1095cee4d0d37f6b3129a9461d9dba8ee2",
+      "numeric_sha256": "3642b3015c64799d7cc9b98015c47daa9aedd7f213a34d061e196098b11b6d37",
+      "fold": 4
+    },
+    {
+      "file_id": "Train236.csv",
+      "label": "Normal",
+      "sha256": "7592e028e25f509345484f8c89c21521929aea51587018483081c693b4a30951",
+      "numeric_sha256": "ceb69f370e12441f67b620312d97dbf9503dbe0b670a9978e376f3c170a64c3b",
+      "fold": 2
+    },
+    {
+      "file_id": "Train237.csv",
+      "label": "Normal",
+      "sha256": "193618b804749baeac729cb25414483a1bbd7cbc4e0cf6fdb3f51c93007fb93d",
+      "numeric_sha256": "5f69af0822673a1dd6534e6b813ea53fb8644fdac0902a7bb610afa3d12b71d0",
+      "fold": 4
+    },
+    {
+      "file_id": "Train238.csv",
+      "label": "Normal",
+      "sha256": "ca941fd317791f489e519e7845f579d210a232fd0dc409fdef4c2029ec35d93e",
+      "numeric_sha256": "a01ff57fe099f81965ee0657198ea966f32a409946fe8aed321a792816931b68",
+      "fold": 1
+    },
+    {
+      "file_id": "Train239.csv",
+      "label": "Normal",
+      "sha256": "a21a0ba60302af55be50f7df2afdb0771869d659c879f1ab311711a2aa5629fd",
+      "numeric_sha256": "29f937cc67a9ed19b912b5161844f30ee7ebf046a3f1d701e1e5ba3e83b9767b",
+      "fold": 4
+    },
+    {
+      "file_id": "Train24.csv",
+      "label": "Normal",
+      "sha256": "0e034518f283cdf8e0d61c11808ee1772e898a6a16edc92236a149be96259fa9",
+      "numeric_sha256": "871c363617717a9df8310bed1788050c9cec684c32ad9cbe76937475ff95656c",
+      "fold": 1
+    },
+    {
+      "file_id": "Train240.csv",
+      "label": "Side II",
+      "sha256": "31a1e3050d727f0b98fc416e058b9dc5436d5637f91d918f368400b6ba5c82f1",
+      "numeric_sha256": "bcbaa4614a3c330a0b922740d6f5a34fd7ab12b6b238ea5dcd48990e18a91f63",
+      "fold": 3
+    },
+    {
+      "file_id": "Train241.csv",
+      "label": "Normal",
+      "sha256": "de37dfc8f2a3af0653962bccdfb6d73a2919c61a7a7ce20493ee4072b67dbcdd",
+      "numeric_sha256": "dbdb74686115020c87a4c7ca3aec7185b1ce28bf4f79736336fbcd91b3b659ce",
+      "fold": 0
+    },
+    {
+      "file_id": "Train242.csv",
+      "label": "Normal",
+      "sha256": "5aa81eed21dd4675560db243b67fc75f115b83f3980faaac15e7f3eb9ad68e66",
+      "numeric_sha256": "e235b0d695623890c198bf2fa536b7c747a3d83b15a606de5fcdb30b25359d69",
+      "fold": 3
+    },
+    {
+      "file_id": "Train243.csv",
+      "label": "Normal",
+      "sha256": "5528ceb5d0fbbe2191c2e43baab0ea57ecabf0de9a3b3a1402ab0643f91e4c3d",
+      "numeric_sha256": "b5dc44e495c5c9b25c0c402d07afb1d258c32b0777564537cb5097eb99ccc913",
+      "fold": 0
+    },
+    {
+      "file_id": "Train244.csv",
+      "label": "Normal",
+      "sha256": "5c8b0019b492afc604539cd121b45f46190dd53e5d91ce980998ef105861a0db",
+      "numeric_sha256": "f113c4dd2d2a9d568c21e0e53c21a5ba2d19643863bd9e06d0ba8958113c4969",
+      "fold": 4
+    },
+    {
+      "file_id": "Train245.csv",
+      "label": "Normal",
+      "sha256": "46a0287385450f8ee43321a5bd164dec9eafa7aeaf358dc88e9e69897b4cd51b",
+      "numeric_sha256": "83db23bec255d5ccedeca23dbac017a991ec773e9b76602de9b4aef41de81fcb",
+      "fold": 2
+    },
+    {
+      "file_id": "Train246.csv",
+      "label": "Normal",
+      "sha256": "3e2946157cab848edf49fd8b914ac772d264eadf2fc5ade953ea20bbfeecc370",
+      "numeric_sha256": "f31aedbff31efc3cd55215838ffad3156b354f90d35ee347fee6b7c843343dc7",
+      "fold": 2
+    },
+    {
+      "file_id": "Train247.csv",
+      "label": "Normal",
+      "sha256": "c3843d2975de99bcf163cf5078be515ef8c853d80a90331264e41d05ac0691e6",
+      "numeric_sha256": "45ace070eb24779680d9735398558a51abca1b168ddef4bfbe4057daf30cc505",
+      "fold": 0
+    },
+    {
+      "file_id": "Train248.csv",
+      "label": "Side II",
+      "sha256": "1dc50dd7afb7c7d4569b1ba53f21de56950d18797d1988eedab5a70c6e02cc01",
+      "numeric_sha256": "cd38d5c5c45500606a9173f9f38e9d4ca0ab360af965fc00bed1a0e809ddd74a",
+      "fold": 3
+    },
+    {
+      "file_id": "Train249.csv",
+      "label": "Normal",
+      "sha256": "c35735faafb2f6c1df4c8aca9c0d2b7c29677150b890f3824a06a1754a6a9993",
+      "numeric_sha256": "82216582aab6705147453de5f613f45e929c97fcad005ed6a0ed1c7de0547727",
+      "fold": 0
+    },
+    {
+      "file_id": "Train25.csv",
+      "label": "Normal",
+      "sha256": "f2b4ff4ba7f2b0d42b09d1447c44a7de2947c7824a3bc25a97cb7799a1490611",
+      "numeric_sha256": "27f4b53a2a379d49c37923e57b41dbdc7d44f9c57b6b4a7e7c4bc7000612144a",
+      "fold": 1
+    },
+    {
+      "file_id": "Train250.csv",
+      "label": "Normal",
+      "sha256": "1fb827ff8aefac0e739b03449647a27f455de1404b3e2b787d9b68be0e64a1f2",
+      "numeric_sha256": "773ee12d68e316777b93802763f667ad44df45a467116199cd2353dd2a6829b0",
+      "fold": 3
+    },
+    {
+      "file_id": "Train251.csv",
+      "label": "Normal",
+      "sha256": "c6535dd8b8572d1465316467f5326483afd0a3ed91ebbc178ba87a2915432c5e",
+      "numeric_sha256": "3546c1e516fe4b7d961037ace2b11983b654ed86720477ab7d539dc43c0db9e3",
+      "fold": 4
+    },
+    {
+      "file_id": "Train252.csv",
+      "label": "Normal",
+      "sha256": "64ac23e204b7c8c4de9d479775413b931e262bff61536c6b4c21d6ad65b7ecb6",
+      "numeric_sha256": "831a98173ff82d95f03d630a11e72dc59933785fa074da43858b013b63d30de8",
+      "fold": 4
+    },
+    {
+      "file_id": "Train253.csv",
+      "label": "Normal",
+      "sha256": "45911b007cf1534bcc3eb50b7637f8524fe760052c46403e427563a4ffa855ad",
+      "numeric_sha256": "b634bb56177eabcf74ec04fc1345109d365f678cde12b3430edeb34a3ea684c4",
+      "fold": 2
+    },
+    {
+      "file_id": "Train254.csv",
+      "label": "Normal",
+      "sha256": "db2a72746911cde6361f1666f53d4aa89acb1b940c052e57fe911707d9bc22b0",
+      "numeric_sha256": "084b051ceedc008cd3fac7e58f6ea5390e93ed9fc0ed3be0ddba31b3e6021b04",
+      "fold": 4
+    },
+    {
+      "file_id": "Train255.csv",
+      "label": "Normal",
+      "sha256": "297a88b91ba170e24a5929720bc34db2a2a937d2f8966cb56d2f8415a34f828b",
+      "numeric_sha256": "abd361508c8bfc9e33bcf67bec4c0b09767ebbfb94dd8a907bbbba87bf3935ca",
+      "fold": 3
+    },
+    {
+      "file_id": "Train256.csv",
+      "label": "Normal",
+      "sha256": "31fd585ecf7801710a3998f59ee002b1af1d23851f4529a7a345d143384a335a",
+      "numeric_sha256": "1319946c2930486b2930e867b2285c4074f186f0b918e75c6d1516cd533ef721",
+      "fold": 0
+    },
+    {
+      "file_id": "Train257.csv",
+      "label": "Normal",
+      "sha256": "14d46fab6e95f8212a571d22c433b1527e0a8eedcab2ec8d08f31836c3b15fea",
+      "numeric_sha256": "932522719384d3768e3150b9a72b2393f81c43c72bf4f9b07e7a0a71d6040d2b",
+      "fold": 4
+    },
+    {
+      "file_id": "Train258.csv",
+      "label": "Normal",
+      "sha256": "b12a317db1ec1dd808c010ec31fe479241d9d8176eceec367a8674ef80f54e6e",
+      "numeric_sha256": "0406b7763518ccf90f7fb442c998fd975b504d746733676e1334e86faee92fd0",
+      "fold": 1
+    },
+    {
+      "file_id": "Train259.csv",
+      "label": "Normal",
+      "sha256": "64164ff66119ce43e9ab2c1d7c9dd701faa07c1ee65c719c0f43a57c2d95c8dc",
+      "numeric_sha256": "c65469f930f059e4681eec3acffec2ad8b60db9e56e146b18f741ca077ab18b1",
+      "fold": 4
+    },
+    {
+      "file_id": "Train26.csv",
+      "label": "Side II",
+      "sha256": "bff486ee3a338e664c614b21fb03f6b881982065b9ced726b6499e1517192ea7",
+      "numeric_sha256": "a90441132070195222196640eeb018c43ff1d48ad08b06187087f8c307b6a451",
+      "fold": 2
+    },
+    {
+      "file_id": "Train260.csv",
+      "label": "Normal",
+      "sha256": "dca96ff14e8e977da58d1a1be4bfa4fba32bc88100fb49635747ea74f0285004",
+      "numeric_sha256": "9e3402943845390660c512b2029e62c6472e177f523b8b405c05a64015f6b555",
+      "fold": 4
+    },
+    {
+      "file_id": "Train261.csv",
+      "label": "Normal",
+      "sha256": "2a018c0384017f04020dc5d6cc029e8c5fa80ca8f9b533fc78799ddcf71fe79a",
+      "numeric_sha256": "8d238f58d0fbf49cf9fae16a7d3a75133d58f26b4585af95bc4cf0868e455843",
+      "fold": 4
+    },
+    {
+      "file_id": "Train262.csv",
+      "label": "Normal",
+      "sha256": "5d1a2429273e1befb9e6d25d6f15057d88408f6f4c25fe35b75eec85feb99f66",
+      "numeric_sha256": "a7e17600f1ebe7393b7f8f60a3f6f25d163d5dcc735fae3578d65d77618cb9d4",
+      "fold": 1
+    },
+    {
+      "file_id": "Train263.csv",
+      "label": "Normal",
+      "sha256": "94b7b90d3a5e8547be9794f7112fcc58eedf1fc930000e19502dc6ddb90ced08",
+      "numeric_sha256": "36074b9963e2255ce9714907318ac05a494c3d3b06c391b1ee9dab6cfd2ade28",
+      "fold": 1
+    },
+    {
+      "file_id": "Train264.csv",
+      "label": "Normal",
+      "sha256": "a9efe5e84770dbcc5f7ccb3bd259b586374fa340b347d6f24e1184306aada9c5",
+      "numeric_sha256": "6cdf0975097def2a052412039a59f01377d6f1a0d95e87157b82eb5ad26e01a4",
+      "fold": 4
+    },
+    {
+      "file_id": "Train265.csv",
+      "label": "Side II",
+      "sha256": "6c049cadce16bf2482916196bb9b4a4d57cfd974432aab081d360fc2397f3cd8",
+      "numeric_sha256": "049c635f69c995743188afcab661a876cc6724014ca5b7fd3f8e1739e0f6ce51",
+      "fold": 4
+    },
+    {
+      "file_id": "Train266.csv",
+      "label": "Normal",
+      "sha256": "7c5946b2b40b3ba1498d74e90a433034b6ae7dc939379a8db3af911cdef2f36b",
+      "numeric_sha256": "24af37cc619607f271197200e2cbeba0fec709312cfff6b7e2e7494a871f91d9",
+      "fold": 3
+    },
+    {
+      "file_id": "Train267.csv",
+      "label": "Side II",
+      "sha256": "32f77d30efb416b1f391400959f5a414a837086060b2774e5ce0cb6e312a6a07",
+      "numeric_sha256": "1445f593fac4d1aad648b7c0df32799cedb9d048da8a8da4f328791f69bd10d8",
+      "fold": 2
+    },
+    {
+      "file_id": "Train268.csv",
+      "label": "Normal",
+      "sha256": "d30bbdeee6e280f43bca408eb3cfb4309d047c6fba17a789d04994783a15a0b9",
+      "numeric_sha256": "087c5ac67a9e4fa22bdd1724d1404bd374602fceca1a194f27175ce10f8fe104",
+      "fold": 3
+    },
+    {
+      "file_id": "Train269.csv",
+      "label": "Normal",
+      "sha256": "35d8cb659198a7dfba0fc83bef8838b3d58e3527ef2c6fc9b1545a9d8577a7a9",
+      "numeric_sha256": "9bab375e96d53f80df2826d18980b26fd93646833bb7de2aa6b7f7eb14441a9c",
+      "fold": 1
+    },
+    {
+      "file_id": "Train27.csv",
+      "label": "Normal",
+      "sha256": "28a390fc4f925b6363b06a6654d10d344cebe84d68519c275f68302e05b2b3cd",
+      "numeric_sha256": "af1081fdaca704e9091df103f9da0a65247794ac2dab04e67bda9440d2dd5d9a",
+      "fold": 1
+    },
+    {
+      "file_id": "Train270.csv",
+      "label": "Normal",
+      "sha256": "24a016604bb4b18dc704f42e065258aea84487e03951923c35e3e95180a6ee7d",
+      "numeric_sha256": "ab9a9677eab76af912050be4a40defc5a2b813d43874ba3c091af5a91c1d67c8",
+      "fold": 4
+    },
+    {
+      "file_id": "Train271.csv",
+      "label": "Normal",
+      "sha256": "879fb2c6bcfb04b36cbd0142848401ab5d9e2b8168cc3b21f68ba42ec7d0900c",
+      "numeric_sha256": "957faf8c46f3102d92a939e47fe3d30d593e1044a7cefafe42ffcafa7e98730b",
+      "fold": 3
+    },
+    {
+      "file_id": "Train272.csv",
+      "label": "Normal",
+      "sha256": "8a434daca56d85f07800e10529dbc3b6e964a4364b966b9312b78a91f7cd9c48",
+      "numeric_sha256": "84fcc44c07feddcf8a89427c9d908af604442f07c2963050fe32fe6dc1d4bf40",
+      "fold": 3
+    },
+    {
+      "file_id": "Train28.csv",
+      "label": "Normal",
+      "sha256": "52aecb84afe6fe8d925e0590f4536d26b47b0d9fe83b7ac89e6a53a212c93630",
+      "numeric_sha256": "6e79f5c5aeb4d869be60bbe7bc0821d845f2e2ff07f6ae6af89844c4d8fd7ca8",
+      "fold": 3
+    },
+    {
+      "file_id": "Train29.csv",
+      "label": "Normal",
+      "sha256": "046bbf86bd7d417b475d67f342bd81e5308c51ace6f25deb3792380456377df9",
+      "numeric_sha256": "25c9851a8286c8ab4593740ee146c7d41cb4c392a82c0299b65ea541fa5c8ae7",
+      "fold": 0
+    },
+    {
+      "file_id": "Train3.csv",
+      "label": "Normal",
+      "sha256": "5d97b9cce88b63ddd3f7138e52f47da21299551f1e924a3202e5997970aec393",
+      "numeric_sha256": "cef852bb9292616bfb7e7c645d56025b7d7445fbc426c84205ac5988fcb6d1f1",
+      "fold": 4
+    },
+    {
+      "file_id": "Train30.csv",
+      "label": "Side II",
+      "sha256": "9261566cae195d8f5956fc9224cf6d22fe8afdb20df636606a1a75e4dd7348d5",
+      "numeric_sha256": "a8b270eb917949fc7ba01535bdfc9d6116df7565ee5cb8580082f4a3bd5fb9b8",
+      "fold": 1
+    },
+    {
+      "file_id": "Train31.csv",
+      "label": "Normal",
+      "sha256": "c4271acb834f5c287c88481e39e4f87dd783ca97702eec74625accfbb34056d6",
+      "numeric_sha256": "d9b16c234bf1ac4f703f90528a4c76899506e948c6c032425697cfee482accbb",
+      "fold": 0
+    },
+    {
+      "file_id": "Train32.csv",
+      "label": "Normal",
+      "sha256": "fb98d4ca0e7d2213a25ec3016e20e2a723c1549c30fa310ffdae41e67f582777",
+      "numeric_sha256": "1a5609709477f6cde534a10da4dec8c4c789803cf085c1d1f234914b02a37b60",
+      "fold": 3
+    },
+    {
+      "file_id": "Train33.csv",
+      "label": "Normal",
+      "sha256": "4e4790d25d180d60e9da010d9cac4293f34c1eab77b64fcb5bd611463553688b",
+      "numeric_sha256": "592833878b8b0a10549bacf214819ae4e450cb71672703f3790714f031f37ccb",
+      "fold": 1
+    },
+    {
+      "file_id": "Train34.csv",
+      "label": "Normal",
+      "sha256": "a0ddae1044e65407de02ed8d27442ae701d897b148a4e2d7cc6541b0e4e2ba35",
+      "numeric_sha256": "0fd97096f6f8ff04d42bdc0eb54627c4d766e4dc1d8dbef9eec3665eb00806e7",
+      "fold": 2
+    },
+    {
+      "file_id": "Train35.csv",
+      "label": "Normal",
+      "sha256": "66ecdd31c2b1fab6cd21d7b2e58860316f9436aad597e0120c689537cb1184ce",
+      "numeric_sha256": "c631c23cd31761cae7bd344ad26ff029350b4c1ab8a6403353a01fccc0e9d212",
+      "fold": 1
+    },
+    {
+      "file_id": "Train36.csv",
+      "label": "Normal",
+      "sha256": "1b5b3ab83fd9fbd37ae097654ab3489a252780e8772fa0a5980115312bb42f03",
+      "numeric_sha256": "0779bdcfda53b3c88fdbc8b941d5d5e41ec722834f6d2214ca10b02fcd3e8c2a",
+      "fold": 3
+    },
+    {
+      "file_id": "Train37.csv",
+      "label": "Normal",
+      "sha256": "2374fc3d55c1f1ac94e5ae24de32c21d11a7a07473b198251d23140a684d39ff",
+      "numeric_sha256": "61a61dca620e01232092fa4ad38a063dfeb8d35bd3b04dd552e19555ed6b7851",
+      "fold": 1
+    },
+    {
+      "file_id": "Train38.csv",
+      "label": "Normal",
+      "sha256": "7ae3c921f9ac398655f44c68c16ebd930a9b8a2c6eab46fd8671240bdc3f859d",
+      "numeric_sha256": "5a3ed020d0bdf4b0d32a2e096afe0c84e4a18be61e9774067301d68b9f45de07",
+      "fold": 2
+    },
+    {
+      "file_id": "Train39.csv",
+      "label": "Normal",
+      "sha256": "461e602d2de68fbe4fa692a855360da358ebd515ae94aef9a000878061148387",
+      "numeric_sha256": "67396bf66a626f565517306ec277c797da18806d7a7dc29c537bab813c423833",
+      "fold": 2
+    },
+    {
+      "file_id": "Train4.csv",
+      "label": "Normal",
+      "sha256": "05a6131cba737c749080c7d79769df351ba38b37c4c2c46d1cd753ce2ba4f770",
+      "numeric_sha256": "af8683a7a6fe9ed777f3241e1351b715ae3b3f1449848002235eecea239ed13c",
+      "fold": 2
+    },
+    {
+      "file_id": "Train40.csv",
+      "label": "Normal",
+      "sha256": "37ca912eccf1d55a6c871b5e4a4c15cd6a7ceb5d218b8f0da0844c9f172b267e",
+      "numeric_sha256": "1284e7c56a5785234377fdf30dee266471e293e59986cb558271bfe5013dbe31",
+      "fold": 0
+    },
+    {
+      "file_id": "Train41.csv",
+      "label": "Normal",
+      "sha256": "34a468cfd3f0b140a8823393bdecfbb3b37593a000c97adc4b7fdd5924a30b21",
+      "numeric_sha256": "36a6664c646755ab13dc35774cdd15341b6815b795887906983381603df2dd59",
+      "fold": 4
+    },
+    {
+      "file_id": "Train42.csv",
+      "label": "Normal",
+      "sha256": "f83065646afc456d85a3cf295e40e4a7898e6b252a918ef9c28ef8657fcc7f72",
+      "numeric_sha256": "fdba3ea1923c1fcab5b199ae5fe1340a4a6f2a4be682a0e051268517914c09b0",
+      "fold": 3
+    },
+    {
+      "file_id": "Train43.csv",
+      "label": "Side II",
+      "sha256": "a98127ec274e3f07350eb6c7e5f647e1335bffc170518324af02258337871a7d",
+      "numeric_sha256": "1b6021117b747863de41a5f3a1e6fff5b0c388569a2d982d255d3f6a02d2e07c",
+      "fold": 4
+    },
+    {
+      "file_id": "Train44.csv",
+      "label": "Normal",
+      "sha256": "c6893cc488c1c1ccac7e7645f580288fcc565b0883181d112b0bc03796071f99",
+      "numeric_sha256": "761d37173f630aaed33fa3b5b7386565de32b26bb6c77b3ba1335d3559696bf4",
+      "fold": 4
+    },
+    {
+      "file_id": "Train45.csv",
+      "label": "Normal",
+      "sha256": "b28495f09c175a78fa06e64d532b5f68b216d1e3864686c84cf4c3b084c263af",
+      "numeric_sha256": "75c4a412ef90515fbde9208c07bcb9b0b8e0ec513ac14a02553419daa1703141",
+      "fold": 0
+    },
+    {
+      "file_id": "Train46.csv",
+      "label": "Normal",
+      "sha256": "84f05e63ecfd254c59b755d623f7d7648912dcb9d9f1318c062768c7f2c6f4e5",
+      "numeric_sha256": "5cacbc8a05187645989c4dbcbd71b5b5202479c7aebb9f11294d9dbe1f3bfcc7",
+      "fold": 0
+    },
+    {
+      "file_id": "Train47.csv",
+      "label": "Normal",
+      "sha256": "050a9ebd26e3136695bf380e5184330eb50625ea4040bf998c48bbaf3de7e932",
+      "numeric_sha256": "da205297b4ac2bc9a22a18b0e6aca7f5c27f67f3c62ac7d15a253e4cd6cb5a29",
+      "fold": 0
+    },
+    {
+      "file_id": "Train48.csv",
+      "label": "Normal",
+      "sha256": "736cac36c76b5c44b6be786c340beeadfb4c079aacd3e94ca2bcfc456e32df8d",
+      "numeric_sha256": "d4beb3d0888ae8781fc96470953e25f654e89ab49fb96b7d328b799e1de3206e",
+      "fold": 0
+    },
+    {
+      "file_id": "Train49.csv",
+      "label": "Normal",
+      "sha256": "c8e8ccdc43cb4757336f33d7fab4a644e728b4524b4c0c269b993ddadd0b9435",
+      "numeric_sha256": "7ad712001fdecd37f49ce82e7116079b6e81ab1852a29ec22bf2b94d70f2ecc4",
+      "fold": 4
+    },
+    {
+      "file_id": "Train5.csv",
+      "label": "Normal",
+      "sha256": "c972814faf036734b2f5f5a64acde63704574c545f73b65878da9cd864b21299",
+      "numeric_sha256": "bbe06a0d52f6fb7a99fa97f551f4aa1639bdda496f62aefd31175b0dcd0182d9",
+      "fold": 1
+    },
+    {
+      "file_id": "Train50.csv",
+      "label": "Normal",
+      "sha256": "4836af024cd28ad9be3c7e536947428f82becc99f953d77489efa1b0fa80126d",
+      "numeric_sha256": "6fb00abc1d4f08aa0f20397cbd44a3e69bf45846aa303f64de986a9e7ab17d4e",
+      "fold": 2
+    },
+    {
+      "file_id": "Train51.csv",
+      "label": "Normal",
+      "sha256": "5034924fee9f040edb03f52e4ea675dd8fcb5caeb1a3c95c31334cf9194725b9",
+      "numeric_sha256": "2cf98499107baa94ba49f743cd0b04ee777744bc614d88068f1089b7037ad51c",
+      "fold": 4
+    },
+    {
+      "file_id": "Train52.csv",
+      "label": "Normal",
+      "sha256": "e7730b69eaaf8aa05ef5474ea90a9741afa6ce31a382d3c2a7b315cc8de6c64d",
+      "numeric_sha256": "ddc5d02d29fbc932d01428ddeb30a29e3aa669e39c32e3dbf4a1c38b6e47761a",
+      "fold": 0
+    },
+    {
+      "file_id": "Train53.csv",
+      "label": "Side II",
+      "sha256": "b35079035c1971bc1463d02505c2a8fb4037356fbf0295b3fee4c59ecd2bb4d9",
+      "numeric_sha256": "329df17428f8d0120612951bb851a9f931cee8228048034cb2435a55d37cbc82",
+      "fold": 2
+    },
+    {
+      "file_id": "Train54.csv",
+      "label": "Normal",
+      "sha256": "46e4cc4587095b70b94a7ff665decf003fd403c74778c0878ac39da5a0aa0543",
+      "numeric_sha256": "b3bb4a0c62572f3ea0d557f6acea4df16b600857fee177fe80709a7f141482d4",
+      "fold": 3
+    },
+    {
+      "file_id": "Train55.csv",
+      "label": "Normal",
+      "sha256": "410ea5885274a5fed922c76edd8e7b34cbf42fd9b85d8578736632bc3c6d3372",
+      "numeric_sha256": "a69818aa0df5577cd27fd7ed1aa8cb1ce6d35b1ad5f9e04ac9c08430f9d39d35",
+      "fold": 3
+    },
+    {
+      "file_id": "Train56.csv",
+      "label": "Normal",
+      "sha256": "ba906a153be64a6de3076bc90c2c9448003424a7b5cdc90b38e05a56703c9cc6",
+      "numeric_sha256": "e03b8aa29e3fbb3016a931cdaa4d25749ce5d963a2b237f49dced38d4e16cdf5",
+      "fold": 4
+    },
+    {
+      "file_id": "Train57.csv",
+      "label": "Normal",
+      "sha256": "ccf117296ae6471d1ad38f8db08ab1dfc6ea7f4a06be969eb0d50fa3311f3f25",
+      "numeric_sha256": "081c6236906afb20221222df896f4ff47766a3dcce2106b98383383404c53b0b",
+      "fold": 1
+    },
+    {
+      "file_id": "Train58.csv",
+      "label": "Normal",
+      "sha256": "0959208fb90e8df33bb8daaf0530411aa092229717d1b06e4f083f8be320129f",
+      "numeric_sha256": "396db5bd02b7f29686c3c805e2998ea302ce466e2e6f18f3d0cc7c0c70e0a6eb",
+      "fold": 0
+    },
+    {
+      "file_id": "Train59.csv",
+      "label": "Normal",
+      "sha256": "02d4c2764a5aa39b71974a9475aa63f1c6d6f3ffc0843dbc827744d59b4af9aa",
+      "numeric_sha256": "cba931910b44a469f41c4f38c6d655f9c8734f1ed563d08ec8f721f819a54477",
+      "fold": 0
+    },
+    {
+      "file_id": "Train6.csv",
+      "label": "Normal",
+      "sha256": "91da41be0030fec21c243413d70b1c38f95fe8fc67163a3a9d53bef9ffc479ce",
+      "numeric_sha256": "1b0ab22bbc48a04c19f4b6770798cdb0d75f4fa1aa88790621edb3021cc280f1",
+      "fold": 2
+    },
+    {
+      "file_id": "Train60.csv",
+      "label": "Normal",
+      "sha256": "5ef3d2878c354ac5e6857f8cb5d94bb3e4b817222088fcfdae451ffdc0dd27ab",
+      "numeric_sha256": "6fae6fd8626bdb13d0ed1a54f9593867cfa5b1d0127a4f94e8b9b3808846e2fe",
+      "fold": 1
+    },
+    {
+      "file_id": "Train61.csv",
+      "label": "Normal",
+      "sha256": "9e33f868e520b4a1885c24e1587d2115ec1fc233ecd257e6d005a905cdfc05fe",
+      "numeric_sha256": "9bc585bbbc32fe19e0b8eb4095e259ef02b4b926ebddaea377687207cd81982b",
+      "fold": 3
+    },
+    {
+      "file_id": "Train62.csv",
+      "label": "Side I",
+      "sha256": "81524bdf332d008c74166e211fd69019d42d63b2ae6d7d2a26aabfd2bae41ef4",
+      "numeric_sha256": "902f2b243741554bf98a671e06907c461790f760d02be6201684c708fdecb5b1",
+      "fold": 2
+    },
+    {
+      "file_id": "Train63.csv",
+      "label": "Normal",
+      "sha256": "09045c28ac1fea6d605650a59af4e9235fd04a46e7476fa296734b65655dff85",
+      "numeric_sha256": "589c434a99b05025225024156a33a0abb20365c2b5211d3c5446df1aef27d69a",
+      "fold": 4
+    },
+    {
+      "file_id": "Train64.csv",
+      "label": "Normal",
+      "sha256": "0903e68aca4cbec434402b7d182d94c37bf346e2ab0a8780fc078f6c188702c1",
+      "numeric_sha256": "04f3597157dfee29cc13c905e07a780f0e3fb3fe54288033817efa888c0ee5d9",
+      "fold": 2
+    },
+    {
+      "file_id": "Train65.csv",
+      "label": "Normal",
+      "sha256": "33e0282a1e63dec4063e18664d31a820e70683f9510fbfcf606a42def0f70ab2",
+      "numeric_sha256": "cf15552efbe70753666e1949c4315f2eb1b2593faeca235607113f08378dcf48",
+      "fold": 0
+    },
+    {
+      "file_id": "Train66.csv",
+      "label": "Normal",
+      "sha256": "da51a2bb94a54d5075d6c0098e2a9dd0da265062eee0259b29a55e136036468c",
+      "numeric_sha256": "21848a8d4da38dfb453e2bc391612a206d983b22f8fa6a2c9837870c0bf39b88",
+      "fold": 2
+    },
+    {
+      "file_id": "Train67.csv",
+      "label": "Normal",
+      "sha256": "7bd877a28d05340c691a477f6e1f67d8b178911dab6cb1cdceee2c8911d2409a",
+      "numeric_sha256": "ecf50610525f4e6abcd5ae5f68ecce5878a9a2de7c422473441bb338be0a01b4",
+      "fold": 4
+    },
+    {
+      "file_id": "Train68.csv",
+      "label": "Normal",
+      "sha256": "26fcd4fa894d4b2f239e4ec86a46de83b175191d2d5a08fb454ab6d3883a2707",
+      "numeric_sha256": "09c18451650f256fb05066a75a81629801b660f8e02895b307234f2d3ea1984d",
+      "fold": 0
+    },
+    {
+      "file_id": "Train69.csv",
+      "label": "Normal",
+      "sha256": "f73f817711bbf03c28de36555116a4268d2dc95a35d4340432060ed7b6f30538",
+      "numeric_sha256": "e88a04d38e35b55f83ff541eaa24b68d6198f2248bd88d0e7c8a68f1b1671f43",
+      "fold": 1
+    },
+    {
+      "file_id": "Train7.csv",
+      "label": "Normal",
+      "sha256": "1981486864d5ac6f9b8990f19ea0b603659321e0672ab3e5d7200f619f3954a4",
+      "numeric_sha256": "563afe05a5efdf81ca0911bce945dac5afe691ecd231846093bfe10f50817aa3",
+      "fold": 3
+    },
+    {
+      "file_id": "Train70.csv",
+      "label": "Normal",
+      "sha256": "086a577998e2c398823d75dbdc96e7457786c2a6bc7dbe6f339256b40d4a7fa6",
+      "numeric_sha256": "afdc65d210f821afde0849a4838afe185f72fdb4ae470e7112a234d5e0b47bb7",
+      "fold": 2
+    },
+    {
+      "file_id": "Train71.csv",
+      "label": "Normal",
+      "sha256": "d8895c0677ebe6888ab97885529a4147ff72ade6fc91e96bbf4dd8a1d00580a2",
+      "numeric_sha256": "d2ad80c84c2e6c1d2eca9e2490670c0ed420ca1fdcf305691ceee0c5061a91a5",
+      "fold": 3
+    },
+    {
+      "file_id": "Train72.csv",
+      "label": "Side II",
+      "sha256": "60aa9192737e02a20c06d7bd9f9531cbab6050ad70b88092fc6b1eafe2991ace",
+      "numeric_sha256": "27e622e6af7bc86418808cab1c0d5eba19df7be5b754219f8f118ce109d3a3f5",
+      "fold": 1
+    },
+    {
+      "file_id": "Train73.csv",
+      "label": "Normal",
+      "sha256": "329bae19502d50a3a40248160e9a38d01dc14fa6462be37005158c5ff92adb20",
+      "numeric_sha256": "7f3c23ab328831c20f1c44ce933a64f620beefd932f5bb83925147ea211fa57d",
+      "fold": 0
+    },
+    {
+      "file_id": "Train74.csv",
+      "label": "Normal",
+      "sha256": "fcf2975424493047b1411f5d8f7352e02f0075a347fcc62d1ee75cd91b4c91a2",
+      "numeric_sha256": "fae16eab28baf3a457d0190f2471027c3901fd2dd591a8891e558e95e229defc",
+      "fold": 0
+    },
+    {
+      "file_id": "Train75.csv",
+      "label": "Normal",
+      "sha256": "1c35f2590e860bcb27ec3cb89f8abd3f98538dc499e035c39bc727372a87436d",
+      "numeric_sha256": "73c17fd78c4b28859862d2cea12e9d2e9bfe4f904ed88165fee005c81f7e91be",
+      "fold": 4
+    },
+    {
+      "file_id": "Train76.csv",
+      "label": "Normal",
+      "sha256": "62d534e9a8b1917cd4d1a168e073462c52196531436b242a9cb1ed5dfaba3b7d",
+      "numeric_sha256": "8b5dc14ee47f2263f67dddea0ec14f886f91203af35082942eabd210f6a5f8a4",
+      "fold": 1
+    },
+    {
+      "file_id": "Train77.csv",
+      "label": "Normal",
+      "sha256": "4c249d9535b2b2ff552dffa11050e6602fc88002f68af138808a6abccb735b74",
+      "numeric_sha256": "b5655390e7ac34d2be25a05b83edf515c39200a7fcb996693c2f8959901c6218",
+      "fold": 4
+    },
+    {
+      "file_id": "Train78.csv",
+      "label": "Normal",
+      "sha256": "1c38253a037fe7a816f6c2822cfabd451f03f036cac06ae3e25136b59a628607",
+      "numeric_sha256": "5ad0ac447d35e927e535e61c1401ea29f733c4222a889dcb0d5c85bac0ce83fd",
+      "fold": 0
+    },
+    {
+      "file_id": "Train79.csv",
+      "label": "Normal",
+      "sha256": "773f56c97e5cb9b0609c20d7574cab35e74b111894ea2a62683a632955414c0e",
+      "numeric_sha256": "c1f207c10c95c75fac33383c18721ab50eb366c51803ada404c241e5b9d76a8b",
+      "fold": 0
+    },
+    {
+      "file_id": "Train8.csv",
+      "label": "Normal",
+      "sha256": "c019c838344221b0d0c72e67c8e43bb5f9926016e1bbcc2313e7a2f33f7e5ca0",
+      "numeric_sha256": "4d8e0e546bd86a98f35f166bae7b8fc542835b370a4b64ad0008984589ba8598",
+      "fold": 1
+    },
+    {
+      "file_id": "Train80.csv",
+      "label": "Normal",
+      "sha256": "2d87217ac21872bc738dd86c05ea0ca56d67d0c2f98bd14d1a0ac7f835bdac03",
+      "numeric_sha256": "4cf831d1da41b6aa112d6c0495faf8a4636f2921741b88a4c9b03a1a6cc3c92c",
+      "fold": 4
+    },
+    {
+      "file_id": "Train81.csv",
+      "label": "Normal",
+      "sha256": "cb3cfdba3291eb690cad241ed3a31ef613509b2ecc4050cd9bbb2f1a02799fdc",
+      "numeric_sha256": "d4142beda41a05deb517df713bf43d76b4559d6a989dbad690b7fcfa378fde71",
+      "fold": 2
+    },
+    {
+      "file_id": "Train82.csv",
+      "label": "Normal",
+      "sha256": "8210347a9ae2fa730948ecb3ea7d426acb7af8d3b6730802c16de8649b3e3190",
+      "numeric_sha256": "7ca4edf7b092f24060f43ee7a98c23d990faee194b11e9d0bb808cbadb5a6680",
+      "fold": 3
+    },
+    {
+      "file_id": "Train83.csv",
+      "label": "Side I",
+      "sha256": "b6a1f0eedcdfb73de1d8bb13c4234c6cd2166cd38530e1b90786c01b61399f02",
+      "numeric_sha256": "aed486e6583fbf0de6eea25a3a61b87bb5c01b354c449f68ecd0fa4e39edf6bf",
+      "fold": 1
+    },
+    {
+      "file_id": "Train84.csv",
+      "label": "Normal",
+      "sha256": "7f24b766972326b1a17d5bf87170f22fe0ee242cc271af70cc17674c560e5b7d",
+      "numeric_sha256": "b73128d7b6f12785dcc2bd465543a258783007ad1a6f7209f782f53447144a68",
+      "fold": 4
+    },
+    {
+      "file_id": "Train85.csv",
+      "label": "Normal",
+      "sha256": "c4d76bb70d9bef254fe2397439f2f316f7891ad33ff182ed3101fcca8ff77a2d",
+      "numeric_sha256": "c4de512efb732993435d8bf17aeb1be0c4ad9cf482e3e1b9ada867f1a300b2f5",
+      "fold": 3
+    },
+    {
+      "file_id": "Train86.csv",
+      "label": "Normal",
+      "sha256": "dae265139da0ed221b46b0ed1f3f0e3d20236550bd88eaa232fb39bb5694afad",
+      "numeric_sha256": "bbea0b0a511973274b3b08011fccf9b8e78436d239bf2e6b15958c982ee2337a",
+      "fold": 4
+    },
+    {
+      "file_id": "Train87.csv",
+      "label": "Normal",
+      "sha256": "01b9fd782b917b2310f56a959d6f9198ceaaa5f5ff8678bcd2fac7f4155033cb",
+      "numeric_sha256": "b77ca36c533e31f91b7d99f1b909a88de8bae2924151f6215778f8c78d8f5234",
+      "fold": 1
+    },
+    {
+      "file_id": "Train88.csv",
+      "label": "Normal",
+      "sha256": "d033141752df33acfc85a4c1b3401749a217058bb385e70ba6d97cb5913c8745",
+      "numeric_sha256": "0e41ee34458e7398bcd3524ac388c7c980eba61baf28c3560998dd88967a2820",
+      "fold": 4
+    },
+    {
+      "file_id": "Train89.csv",
+      "label": "Normal",
+      "sha256": "d8ab6489e36144d0e633b1a9753fec578e62523d05b53085b93f946ee81a473b",
+      "numeric_sha256": "fda15a603a03d6172db53400eb3e1a5cfe2c0cc5af0d40744353f392e809643a",
+      "fold": 2
+    },
+    {
+      "file_id": "Train9.csv",
+      "label": "Normal",
+      "sha256": "67f7f312dc6b5445e4f1740be1078bd96b166ee51e4d9e5fcdf99c776dad7a59",
+      "numeric_sha256": "b5cbc9188c1d5a05e90b017f1acd60870c909db34f53595c55d7582c32a7df17",
+      "fold": 1
+    },
+    {
+      "file_id": "Train90.csv",
+      "label": "Normal",
+      "sha256": "d718eedb7be02ec0e1101edc3dced8635c07e65a8c9653466b57a607035358f1",
+      "numeric_sha256": "175108a850d89f80e4d97582689941d3be1e7e51fdf28ad5a4ac4b5e83912878",
+      "fold": 4
+    },
+    {
+      "file_id": "Train91.csv",
+      "label": "Normal",
+      "sha256": "bcd658bb36e0c3eacc7850c9e8e49da36223000ff415c13933642ee2fa2d92f2",
+      "numeric_sha256": "73f4a288ddb8da7d58c17b391db18d8251551c4b68f499df438af6a838106157",
+      "fold": 2
+    },
+    {
+      "file_id": "Train92.csv",
+      "label": "Normal",
+      "sha256": "56ed74637fe7e3542ae6c5d382945376297ccf5f043936bd7c19043b3b8ee3bd",
+      "numeric_sha256": "62c59b72d278e2cb3e8ccfb898f3882bd78bd93812f6cf00792249c97b4a4e3d",
+      "fold": 2
+    },
+    {
+      "file_id": "Train93.csv",
+      "label": "Side II",
+      "sha256": "721ea2f4b91ecd3f4abbdd17757070290892893a7bf9c31220279c4fa4d3d83c",
+      "numeric_sha256": "359f95f49626ccb44743a0e2badf6444e6ff8e626e07fd93bf8f4e0fb45a8f23",
+      "fold": 3
+    },
+    {
+      "file_id": "Train94.csv",
+      "label": "Normal",
+      "sha256": "b81748eea9328000a049205ed499a72fb0e6ba66caeb6b6b00ea25686ade4e0c",
+      "numeric_sha256": "ae7e800d87ae4409d5adbff44e1bc4b59aa7bdb6c054f2c01ec6e0ccd2fd886a",
+      "fold": 4
+    },
+    {
+      "file_id": "Train95.csv",
+      "label": "Normal",
+      "sha256": "656972e5945853449d1c8f234cfe109a542647793fd5f6fe6f37b90e220be949",
+      "numeric_sha256": "196f5123bd469038a55f20a4d7817f366c865494a66c035b0031f77623b9a6db",
+      "fold": 3
+    },
+    {
+      "file_id": "Train96.csv",
+      "label": "Normal",
+      "sha256": "d00f1c79239cd1a4619394b0aa6dc92c0eab3957def67701833d5bf07490d929",
+      "numeric_sha256": "e1ed317766c1c9751b6baea52d0a9c21a058b1ef998f3099a6225b8fe72ee940",
+      "fold": 2
+    },
+    {
+      "file_id": "Train97.csv",
+      "label": "Normal",
+      "sha256": "251777fa4a3fe0322b1754a79cd4b3a2fe91561b23cde88b398903bf9283b272",
+      "numeric_sha256": "078ff28a441bc79237791a408ef14083a95c757bc998e4e287894d0df3829caf",
+      "fold": 2
+    },
+    {
+      "file_id": "Train98.csv",
+      "label": "Normal",
+      "sha256": "d8e93e3ed468a6c219845c627477343ff929138f838c523838454a9a14538174",
+      "numeric_sha256": "4ade28d00f255ca7d31542bca66dde7f7ea9431cc44c6bad3643863734ef9616",
+      "fold": 4
+    },
+    {
+      "file_id": "Train99.csv",
+      "label": "Normal",
+      "sha256": "2d604e506e8fee84ad4d878e6f8b5e13e5ea4c060cacea31360a2989ad62b6fb",
+      "numeric_sha256": "d9c92a98c28f72f39bdf6c4cabbc35645682f112a6b80c0e14fe5174bd9f1c9f",
+      "fold": 3
+    }
+  ]
+}

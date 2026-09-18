@@ -1,0 +1,331 @@
+{
+  "feature_version": "rail-statistics-v1",
+  "split_sha256": "a6b40d655c2527f5d3cdeef56b2eb06806a41a9e6434a9154d956aaeca769857",
+  "model_source_sha256": {
+    "data.py": "5045b17b4cb99cab9b99fc5cba075cca486ce1b2fdd82e19ce7e2b29e660ea74",
+    "features.py": "00984a0ad8eaa16fb2b8435c91c04611f173774e6e19f4bb8cd6e3b462562b1c",
+    "models.py": "b7e3b31359a080c7134a754c58db69de2659831c6d8516d82c3294acc06fe14a"
+  },
+  "classes": [
+    "Normal",
+    "Side I",
+    "Side II"
+  ],
+  "feature_count": 609,
+  "feature_matrix_bytes": 1325184,
+  "feature_loading_seconds": 5.355708199997025,
+  "models": {
+    "always_normal": {
+      "macro_f1": 0.308300395256917,
+      "per_class": {
+        "Normal": {
+          "precision": 0.8602941176470589,
+          "recall": 1.0,
+          "f1-score": 0.924901185770751,
+          "support": 234.0
+        },
+        "Side I": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 14.0
+        },
+        "Side II": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 24.0
+        },
+        "accuracy": 0.8602941176470589,
+        "macro avg": {
+          "precision": 0.286764705882353,
+          "recall": 0.3333333333333333,
+          "f1-score": 0.308300395256917,
+          "support": 272.0
+        },
+        "weighted avg": {
+          "precision": 0.7401059688581315,
+          "recall": 0.8602941176470589,
+          "f1-score": 0.7956870495233667,
+          "support": 272.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          234,
+          0,
+          0
+        ],
+        [
+          14,
+          0,
+          0
+        ],
+        [
+          24,
+          0,
+          0
+        ]
+      ],
+      "fold_macro_f1": [
+        0.31023102310231027,
+        0.3071895424836601,
+        0.3071895424836601,
+        0.3066666666666667,
+        0.31023102310231027
+      ],
+      "mean_fold_macro_f1": 0.3083015595677215,
+      "std_fold_macro_f1": 0.0015869277142342559,
+      "errors": {
+        "Normal -> Side I": [],
+        "Normal -> Side II": [],
+        "Side I -> Normal": [
+          "Train100.csv",
+          "Train106.csv",
+          "Train121.csv",
+          "Train137.csv",
+          "Train150.csv",
+          "Train163.csv",
+          "Train170.csv",
+          "Train180.csv",
+          "Train185.csv",
+          "Train194.csv",
+          "Train202.csv",
+          "Train213.csv",
+          "Train62.csv",
+          "Train83.csv"
+        ],
+        "Side I -> Side II": [],
+        "Side II -> Normal": [
+          "Train103.csv",
+          "Train104.csv",
+          "Train111.csv",
+          "Train12.csv",
+          "Train127.csv",
+          "Train164.csv",
+          "Train179.csv",
+          "Train188.csv",
+          "Train198.csv",
+          "Train199.csv",
+          "Train2.csv",
+          "Train207.csv",
+          "Train216.csv",
+          "Train217.csv",
+          "Train240.csv",
+          "Train248.csv",
+          "Train26.csv",
+          "Train265.csv",
+          "Train267.csv",
+          "Train30.csv",
+          "Train43.csv",
+          "Train53.csv",
+          "Train72.csv",
+          "Train93.csv"
+        ],
+        "Side II -> Side I": []
+      },
+      "fit_predict_seconds": 0.02978150000126334
+    },
+    "random_forest": {
+      "macro_f1": 0.6866849225930646,
+      "per_class": {
+        "Normal": {
+          "precision": 0.9346938775510204,
+          "recall": 0.9786324786324786,
+          "f1-score": 0.9561586638830898,
+          "support": 234.0
+        },
+        "Side I": {
+          "precision": 0.42857142857142855,
+          "recall": 0.21428571428571427,
+          "f1-score": 0.2857142857142857,
+          "support": 14.0
+        },
+        "Side II": {
+          "precision": 0.9,
+          "recall": 0.75,
+          "f1-score": 0.8181818181818182,
+          "support": 24.0
+        },
+        "accuracy": 0.9191176470588235,
+        "macro avg": {
+          "precision": 0.7544217687074829,
+          "recall": 0.6476393976393976,
+          "f1-score": 0.6866849225930646,
+          "support": 272.0
+        },
+        "weighted avg": {
+          "precision": 0.9055822328931572,
+          "recall": 0.9191176470588235,
+          "f1-score": 0.9094760697978185,
+          "support": 272.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          229,
+          3,
+          2
+        ],
+        [
+          11,
+          3,
+          0
+        ],
+        [
+          5,
+          1,
+          18
+        ]
+      ],
+      "fold_macro_f1": [
+        0.7630568356374807,
+        0.7527777777777779,
+        0.6563573883161512,
+        0.6487455197132617,
+        0.4244444444444444
+      ],
+      "mean_fold_macro_f1": 0.6490763931778231,
+      "std_fold_macro_f1": 0.12186726647501062,
+      "errors": {
+        "Normal -> Side I": [
+          "Train177.csv",
+          "Train226.csv",
+          "Train7.csv"
+        ],
+        "Normal -> Side II": [
+          "Train126.csv",
+          "Train169.csv"
+        ],
+        "Side I -> Normal": [
+          "Train100.csv",
+          "Train106.csv",
+          "Train121.csv",
+          "Train137.csv",
+          "Train163.csv",
+          "Train170.csv",
+          "Train180.csv",
+          "Train185.csv",
+          "Train194.csv",
+          "Train202.csv",
+          "Train62.csv"
+        ],
+        "Side I -> Side II": [],
+        "Side II -> Normal": [
+          "Train198.csv",
+          "Train2.csv",
+          "Train216.csv",
+          "Train265.csv",
+          "Train43.csv"
+        ],
+        "Side II -> Side I": [
+          "Train217.csv"
+        ]
+      },
+      "fit_predict_seconds": 4.394451399995887
+    },
+    "extra_trees": {
+      "macro_f1": 0.5380116959064327,
+      "per_class": {
+        "Normal": {
+          "precision": 0.9,
+          "recall": 1.0,
+          "f1-score": 0.9473684210526315,
+          "support": 234.0
+        },
+        "Side I": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 14.0
+        },
+        "Side II": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1-score": 0.6666666666666666,
+          "support": 24.0
+        },
+        "accuracy": 0.9044117647058824,
+        "macro avg": {
+          "precision": 0.6333333333333333,
+          "recall": 0.5,
+          "f1-score": 0.5380116959064327,
+          "support": 272.0
+        },
+        "weighted avg": {
+          "precision": 0.8624999999999999,
+          "recall": 0.9044117647058824,
+          "f1-score": 0.8738390092879257,
+          "support": 272.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          234,
+          0,
+          0
+        ],
+        [
+          14,
+          0,
+          0
+        ],
+        [
+          12,
+          0,
+          12
+        ]
+      ],
+      "fold_macro_f1": [
+        0.6054421768707483,
+        0.42134213421342137,
+        0.6563573883161512,
+        0.5661512027491409,
+        0.31023102310231027
+      ],
+      "mean_fold_macro_f1": 0.5119047850503543,
+      "std_fold_macro_f1": 0.12761847207741317,
+      "errors": {
+        "Normal -> Side I": [],
+        "Normal -> Side II": [],
+        "Side I -> Normal": [
+          "Train100.csv",
+          "Train106.csv",
+          "Train121.csv",
+          "Train137.csv",
+          "Train150.csv",
+          "Train163.csv",
+          "Train170.csv",
+          "Train180.csv",
+          "Train185.csv",
+          "Train194.csv",
+          "Train202.csv",
+          "Train213.csv",
+          "Train62.csv",
+          "Train83.csv"
+        ],
+        "Side I -> Side II": [],
+        "Side II -> Normal": [
+          "Train103.csv",
+          "Train111.csv",
+          "Train188.csv",
+          "Train198.csv",
+          "Train2.csv",
+          "Train216.csv",
+          "Train217.csv",
+          "Train240.csv",
+          "Train248.csv",
+          "Train265.csv",
+          "Train30.csv",
+          "Train43.csv"
+        ],
+        "Side II -> Side I": []
+      },
+      "fit_predict_seconds": 3.631370399998559
+    }
+  },
+  "selected_model": "random_forest",
+  "selection_note": "Select pooled OOF Macro F1; Random Forest wins exact ties. Same folds used for selection and reporting, so not an unbiased post-selection estimate.",
+  "elapsed_seconds": 13.41349249999621,
+  "peak_process_memory_bytes": 172544000
+}
