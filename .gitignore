@@ -1,0 +1,45 @@
+# Local configuration and environments
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+
+# Python caches and generated metadata
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+
+# External data, model binaries, and generated results
+PS3/02_Datasets/
+data/
+datasets/
+ml/*/artifacts/*
+!ml/*/artifacts/.gitkeep
+ml/*/cache/
+outputs/
+predictions.zip
+*.joblib
+*.pkl
+*.pickle
+*.onnx
+
+# Runtime files and build output
+uploads/
+*.db
+*.sqlite
+*.sqlite3
+node_modules/
+dist/
+build/
+
+# Editor/OS local files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
