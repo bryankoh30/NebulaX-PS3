@@ -1,0 +1,33 @@
+{
+  "artifact_version": 1,
+  "generated_files": {
+    "model.joblib": "Estimator bundle, feature groups, ordered feature names, and target transform",
+    "metadata.json": "Selected experiment, metrics, feature order, and creation timestamp"
+  },
+  "default_directory": "ml/shm/artifacts",
+  "regeneration_command": ".\\.venv\\Scripts\\python.exe -m ml.shm.train --dataset-root PS3\\02_Datasets",
+  "selected_experiment": "20260918T153907Z_p1_1_3",
+  "selected_model": "extra_trees",
+  "selected_feature_groups": [
+    "statistics"
+  ],
+  "feature_count": 15,
+  "target_transform": "raw",
+  "validation": {
+    "splitter": "RepeatedKFold",
+    "n_splits": 5,
+    "n_repeats": 10,
+    "random_state": 42,
+    "CV_MAPE_mean": 0.24483638702034682,
+    "CV_MAPE_std": 0.0717638579008263,
+    "OOF_MAPE_on_averaged_predictions": 0.24005058615107044
+  },
+  "training_dependencies": {
+    "python": "3.12",
+    "numpy": "2.5.3",
+    "pandas": "2.3.3",
+    "scipy": "1.18.1",
+    "scikit_learn": "1.9.1",
+    "joblib": "1.6.0"
+  }
+}
