@@ -12,7 +12,7 @@ Read [plan.md](plan.md) and [contracts/model.md](contracts/model.md) before edit
 | --- | --- | --- | --- |
 | A | `ml/door/` | D1-D4 | `feat/door` |
 | B | `ml/rail/` and shared Python setup | R1-R4 | `feat/rail` |
-| C | `ml/shm/` and `ml/acv/` | S1-S4, V1-V4 | `feat/shm`, then `feat/acv` |
+| C | `ml/shm/` and `ml/acv/` | S1-S4, V1-V4 | `feat/acv-shm` |
 
 Backend/frontend work starts only after all four packages pass the model handoff gate. C should establish a SHM baseline, then an ACV baseline, before refining both.
 
@@ -36,15 +36,15 @@ On macOS/Linux use `.venv/bin/python` instead of the Windows Python path. Activa
 
 ## Working Independently
 
-Start each branch from current `main`:
+The three agent branches are published on GitHub. In your own clone, fetch them and switch to your assigned branch (A shown):
 
 ```text
-git switch main
-git pull --ff-only
-git switch -c feat/door
+git fetch origin
+git switch feat/door
+git merge origin/main
 ```
 
-Use your subsystem's branch name. Keep edits in your package and request shared dependency/contract changes from B. Submit small PRs for working baselines, then finish evaluation and artifact handoff. Keep ACV and SHM PRs separate.
+Use `feat/rail` for B or `feat/acv-shm` for C. Keep edits in your assigned packages and request shared dependency/contract changes from B. Submit small PRs for working baselines, then finish evaluation and artifact handoff. C uses one branch and may submit one PR covering both packages; keep ACV and SHM changes in separate commits. After each model merge, fetch and merge updated `origin/main` into your active branch before continuing.
 
 Give your agent this instruction, changing the role and phases as needed:
 

@@ -47,7 +47,7 @@ Merge baseline subsystem packages around hours 8-12 and check that they run in t
 - **Data location:** Set `DATASET_ROOT` to the existing repository's `PS3/02_Datasets` directory. Read each assigned subsystem's info kit under `PS3/03_References` and the main PS3 specification before implementing its workflow.
 - **Git exclusions:** Never commit raw datasets, uploads, local databases, secrets, or build output. Record reproducible artifact-generation instructions and keep large model binaries out of ordinary Git.
 - **Ownership:** A owns `ml/door/`; B owns `ml/rail/`; C owns `ml/acv/` and `ml/shm/`. Each owner keeps loaders, features, evaluation, tests, CSV export, reports, and artifact manifests inside their subsystem folder. B maintains root dependencies, package scaffolding, shared documentation, and `contracts/model.md` as a small coordination task, not a backend role.
-- **Branches:** Use `feat/door`, `feat/rail`, `feat/acv`, and `feat/shm`. C merges a working SHM baseline before branching from updated `main` for ACV, then returns to the relevant branch for refinements. Do not mix ACV and SHM edits in one PR. B coordinates merges; each owner resolves conflicts in their files.
+- **Branches:** Use one branch per agent: A uses `feat/door`, B uses `feat/rail`, and C uses `feat/acv-shm` for both packages. C works on SHM then ACV in the same branch, keeping changes grouped by subsystem in separate commits; one PR may cover both. All branches start from the shared scaffold on `main`. Merge working baselines into `main` and merge updated `origin/main` into active branches before continuing. B coordinates merges; each owner resolves conflicts in their files.
 - **Agent boundaries:** Complete phases in order. Work independently only against agreed contracts. Do not silently change an interface, modify another owner's implementation, or use fake predictions as a fallback for missing models.
 - **Phase reports:** At every phase completion, report changed files, checks run, remaining limitations, and the exact command or artifact the next agent can use. A phase is complete only when its exit criteria are satisfied.
 
@@ -291,7 +291,7 @@ B commits the agreed function/CLI/output contracts. A and C confirm their packag
 
 ## SHM Subsystem: Agent C
 
-**Own:** `ml/shm/` on `feat/shm`. Keep this separate from the ACV package and its PRs.
+**Own:** `ml/shm/` on `feat/acv-shm`, shared with C's ACV work. Keep package code and commits organised by subsystem; a single PR may include both packages.
 
 **Deliver:** One finite, nonnegative fatigue-damage estimate per recording.
 
@@ -336,13 +336,13 @@ B commits the agreed function/CLI/output contracts. A and C confirm their packag
 1. Refit the chosen approach on all labelled SHM training data.
 2. Package model/preprocessing, feature order, dependency metadata, and artifact-generation instructions.
 3. Verify fresh-process inference without labels, ACV imports, or app services.
-4. Complete the shared handoff checklist in a SHM-only PR.
+4. Complete the SHM handoff checklist in C's `feat/acv-shm` PR, identifying the SHM changes and checks separately.
 
 **Exit:** SHM is independently ready for the later app adapter.
 
 ## ACV Subsystem: Agent C
 
-**Own:** `ml/acv/` on `feat/acv`. Reuse the agreed Python dependencies, but do not import or depend on SHM code.
+**Own:** `ml/acv/` on `feat/acv-shm`, shared with C's SHM work. Reuse the agreed Python dependencies, but do not import or depend on SHM code.
 
 **Deliver:** A complete ranking of the cars in each workbook from most to least likely to have a refrigerant leak.
 
@@ -366,7 +366,7 @@ B commits the agreed function/CLI/output contracts. A and C confirm their packag
 2. Use robust per-case summaries to reduce sensitivity to isolated readings and ordinary control cycling. Document which features are available in each schema and how missing channels affect the score.
 3. Rank every detected car exactly once and break ties by header order. Fail clearly if usable comparison data is absent; never fabricate a successful ranking.
 4. Implement `predict_acv`, returning a list of string IDs for each file. Join IDs with `|` only in the CSV serializer.
-5. Save the ranker configuration and any learned preprocessing parameters, implement the standalone command, and open an ACV-only baseline PR.
+5. Save the ranker configuration and any learned preprocessing parameters, implement the standalone command, and include the ACV baseline in C's `feat/acv-shm` PR with its own checks and handoff notes.
 
 **Exit:** Real workbook input produces a complete, duplicate-free ranked list with original identifiers preserved.
 
@@ -389,7 +389,7 @@ B commits the agreed function/CLI/output contracts. A and C confirm their packag
 1. Freeze the selected ranking configuration; fit any learned parameters on all labelled training cases after evaluation.
 2. Publish schema mappings, dependency metadata, artifact/configuration loading instructions, and reproducible generation commands.
 3. Verify standalone inference without labels, SHM imports, or app services.
-4. Complete the shared handoff checklist in an ACV-only PR. C then ensures both SHM and ACV handoffs are complete.
+4. Complete the ACV handoff checklist in C's `feat/acv-shm` PR. C ensures both SHM and ACV handoffs are documented and complete before the final model merge.
 
 **Exit:** ACV is independently ready for the later app adapter, with all car IDs and ranking order preserved.
 
