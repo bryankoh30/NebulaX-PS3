@@ -1,8 +1,10 @@
 # NebulaX PS3
 
-Subsystem-first workspace for Door, Rail Corrugation, ACV, and SHM.
+Predictive-maintenance prototype for Door, Rail Corrugation, ACV, and SHM.
 
-**Status: scaffold only.** No models have been trained. Training, evaluation, and prediction commands deliberately report that implementation is pending. No backend or frontend is included yet.
+**Status:** all four standalone model packages have passed the model handoff
+gate. The FastAPI backend is implemented on `feat/door`; frontend integration
+is the remaining app stage.
 
 ## Start Here
 
@@ -14,7 +16,9 @@ Read [plan.md](plan.md) and [contracts/model.md](contracts/model.md) before edit
 | B | `ml/rail/` and shared Python setup | R1-R4 | `feat/rail` |
 | C | `ml/shm/` and `ml/acv/` | S1-S4, V1-V4 | `feat/acv-shm` |
 
-Backend/frontend work starts only after all four packages pass the model handoff gate. C should establish a SHM baseline, then an ACV baseline, before refining both.
+The backend calls these frozen inference packages directly and never trains
+during a request. See [contracts/api.md](contracts/api.md) for the frontend
+contract.
 
 ## Python Setup
 
@@ -60,9 +64,7 @@ Do not build backend or frontend code. Report commands, checks, and limitations.
 
 Datasets stay in the organiser repository. Do not commit them, generated model binaries, local environment files, or prediction output. Development code and artifact manifests are committed; transfer trained artifacts separately and document how to regenerate them.
 
-## Scaffold Commands
-
-These help commands work now:
+## Model Commands
 
 ```text
 python -m ml.door.predict --help
@@ -71,4 +73,18 @@ python -m ml.acv.predict --help
 python -m ml.shm.predict --help
 ```
 
-Actual training, evaluation, and inference are intentionally unimplemented. Each owner must replace the clear errors with real behaviour, add focused tests, and update their package README with verified commands and scores.
+Each package README documents its training, evaluation, artifact, inference,
+and validation commands.
+
+## Backend
+
+Install the root requirements and start the API from the repository root:
+
+```text
+python -m pip install -r requirements.txt
+python -m backend
+```
+
+Open `http://127.0.0.1:8000/docs` for the interactive API. Runtime uploads and
+SQLite state stay under ignored `backend/runtime/`. See
+[backend/README.md](backend/README.md) for configuration and verification.
