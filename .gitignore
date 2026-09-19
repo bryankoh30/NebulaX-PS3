@@ -37,6 +37,7 @@ uploads/
 node_modules/
 dist/
 build/
+backend/runtime/
 
 # Editor/OS local files
 .vscode/
