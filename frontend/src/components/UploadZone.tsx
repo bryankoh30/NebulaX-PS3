@@ -11,7 +11,7 @@ export function UploadZone({ subsystem, busy, onAnalyse }: { subsystem: Subsyste
     if (!settings.multiple && next.length > 1) return setError('Door analysis accepts one continuous CSV recording. Remove the selected file to replace it.');
     if (incoming.some(file => !file.name.toLowerCase().endsWith(settings.extension))) return setError(`Select ${settings.extension.toUpperCase()} files for ${settings.name}.`);
     if (incoming.some(file => file.size === 0)) return setError('Empty files cannot be analysed. Choose a recording containing data.');
-    if (new Set(next.map(file => file.name)).size !== next.length) return setError('Each recording must have a unique filename. Remove duplicate filenames before uploading.');
+    if (new Set(next.map(file => file.name.toLowerCase())).size !== next.length) return setError('Each recording must have a unique filename (ignoring case). Remove duplicate filenames before uploading.');
     setFiles(next); setError('');
   }
   return <section className="card upload-card" aria-labelledby="upload-title"><div className="section-heading"><div><p className="eyebrow">NEW ANALYSIS</p><h2 id="upload-title">{settings.upload}</h2></div><span className="file-format">{settings.extension.toUpperCase().slice(1)}</span></div>

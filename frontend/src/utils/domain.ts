@@ -19,14 +19,3 @@ export function saveBlob(blob: Blob, name: string) {
   a.href = url; a.download = name; document.body.append(a); a.click(); a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
-export interface UploadMetadata { filenames: string[]; submittedAt: string }
-const metadataKey = 'ps3-upload-metadata';
-export function rememberUpload(id: string, files: File[]) {
-  try {
-    const existing = JSON.parse(sessionStorage.getItem(metadataKey) ?? '{}');
-    sessionStorage.setItem(metadataKey, JSON.stringify({ ...existing, [id]: { filenames: files.map(f => f.name), submittedAt: new Date().toISOString() } }));
-  } catch { /* Session metadata is optional; it never blocks an analysis. */ }
-}
-export function uploadMetadata(id: string): UploadMetadata | undefined {
-  try { return JSON.parse(sessionStorage.getItem(metadataKey) ?? '{}')[id]; } catch { return undefined; }
-}

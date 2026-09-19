@@ -35,14 +35,26 @@ def test_parse_non_zero_padded_timestamp():
     assert ts.microsecond == 664_000
 
 
-def test_timestamp_roundtrip_stays_non_zero_padded():
+def test_timestamp_output_is_iso_without_timezone():
     original = "2023-7-5-0-0-3-700"
-    assert format_timestamp(parse_timestamp(original)) == original
+    assert format_timestamp(parse_timestamp(original)) == "2023-07-05T00:00:03.700"
 
 
 def test_timestamp_roundtrip_edge_values():
     for original in ["2023-7-5-1-10-17-112", "2023-12-31-23-59-59-999", "2023-1-1-0-0-0-0"]:
-        assert format_timestamp(parse_timestamp(original)) == original
+        parsed = parse_timestamp(original)
+        assert parse_timestamp(format_timestamp(parsed)) == parsed
+
+
+@pytest.mark.parametrize("value", ["2023-07-05T00:00:09.020", "2023-7-5-0-0-9-20"])
+def test_both_timestamp_formats_preserve_milliseconds(value):
+    assert format_timestamp(parse_timestamp(value)) == "2023-07-05T00:00:09.020"
+
+
+@pytest.mark.parametrize("value", ["2023-2-30-0-0-0-0", "bad", "2023-07-05T00:00:00Z"])
+def test_timestamp_parser_rejects_invalid_or_ambiguous_values(value):
+    with pytest.raises(ValueError):
+        parse_timestamp(value)
 
 
 # ── Segmentation ────────────────────────────────────────────────────────────

@@ -2,9 +2,11 @@
 
 Predictive-maintenance prototype for Door, Rail Corrugation, ACV, and SHM.
 
-**Status:** all four standalone model packages have passed the model handoff
-gate. The FastAPI backend is implemented on `feat/door`; frontend integration
-is the remaining app stage.
+**Status:** all four model packages, the FastAPI backend, and the React frontend
+are implemented on `main`. Runtime model artifacts remain machine-local and
+must be installed explicitly; see [backend/README.md](backend/README.md).
+Code-level integration and regression checks do not imply every machine has
+the frozen model artifacts installed.
 
 ## Start Here
 

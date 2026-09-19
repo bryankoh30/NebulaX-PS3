@@ -12,7 +12,7 @@ from .data import CHANNELS, CLASSES, digest
 from .features import FEATURE_VERSION, PACKAGE, training_features
 from .inference import DEFAULT_ARTIFACT_DIR
 from .models import make_model
-from .provenance import model_source_hashes
+from .provenance import model_source_hashes, source_digest
 
 
 def dependencies():
@@ -59,7 +59,8 @@ def train(dataset_root=None, artifacts=None, baseline=False):
         'dependencies': dependencies(), 'artifact_file': 'model.joblib',
         'artifact_sha256': digest(directory / 'model.joblib'),
         'split_sha256': digest(PACKAGE / 'validation_split.json'),
-        'source_sha256': {p.name: digest(p) for p in sorted(PACKAGE.glob('*.py'))},
+        'source_sha256': {p.name: source_digest(p) for p in sorted(PACKAGE.glob('*.py'))},
+        'source_hash_algorithm': 'sha256-crlf-normalized-to-lf',
         'regeneration': ['python -m ml.rail.inspect', 'python -m ml.rail.evaluate', 'python -m ml.rail.train'],
         'trusted_artifacts_only': 'joblib/pickle loading executes code; use only the team-generated artifact',
     }

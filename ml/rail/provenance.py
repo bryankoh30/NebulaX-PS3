@@ -1,13 +1,21 @@
 """Reproducibility and process-memory metadata."""
 import os
+import hashlib
 from pathlib import Path
 
-from .data import digest
+
+def source_digest(path):
+    """Hash source bytes with CRLF normalized to LF; preserve every other byte.
+
+    Do not use this for model binaries, raw recordings or frozen split files:
+    their existing byte-exact digest remains authoritative.
+    """
+    return hashlib.sha256(Path(path).read_bytes().replace(b"\r\n", b"\n")).hexdigest()
 
 
-def model_source_hashes():
-    directory = Path(__file__).resolve().parent
-    return {name: digest(directory / name) for name in ["data.py", "features.py", "models.py"]}
+def model_source_hashes(directory=None):
+    directory = Path(directory) if directory is not None else Path(__file__).resolve().parent
+    return {name: source_digest(directory / name) for name in ["data.py", "features.py", "models.py"]}
 
 
 def peak_memory_bytes():

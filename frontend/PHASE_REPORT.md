@@ -1,5 +1,12 @@
 # Frontend phase handoff
 
+Historical implementation report below describes the initial frontend-only
+checkpoint. The merged backend/API integration now supersedes its absent-backend
+and undefined-metadata limitations: history uses persisted API metadata, reviews
+and ZIP controls default to enabled, review events are displayed, and Door
+filtering handles ISO and legacy timestamps. See `README.md` and
+`../contracts/api.md` for the current implementation.
+
 Implemented only `frontend/`. Root README, plan, contracts, model code, organiser references and datasets are unchanged. Shared `SubsystemPage` and `Results` components provide the four subsystem views without duplicating the upload/polling lifecycle.
 
 ## F1 — Complete

@@ -161,6 +161,13 @@ candidates; it is not an unbiased post-selection test result.
 
 ## Final handoff status
 
+Source provenance now hashes source bytes after normalizing CRLF to LF. It
+preserves all other bytes (including spaces), so real code edits still require
+reevaluation. Raw recordings, split files, and model binaries retain byte-exact
+SHA-256 checks. Existing LF evaluation hashes remain valid on Windows checkouts;
+new reports/manifests identify the source hashing algorithm explicitly. This
+change does not regenerate artifacts or rewrite the recorded evaluation scores.
+
 R1-R4 are complete. The selected 500-tree class-balanced Random Forest is
 refitted on all 272 labelled recordings and saved locally at
 `ml/rail/artifacts/model.joblib` (332,662 bytes). Its matching manifest is

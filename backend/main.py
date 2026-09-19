@@ -100,9 +100,11 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         try:
             for upload, name in zip(files, names, strict=True):
                 destination = run_directory / name
+                file_size = 0
                 with destination.open("xb") as stream:
                     while chunk := await upload.read(1024 * 1024):
                         total_size += len(chunk)
+                        file_size += len(chunk)
                         if total_size > config.max_upload_bytes:
                             raise _error(
                                 413,
@@ -110,6 +112,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
                                 f"Combined upload exceeds {config.max_upload_bytes} bytes.",
                             )
                         stream.write(chunk)
+                if file_size == 0:
+                    raise _error(400, "empty_file", f"Recording is empty: {name}")
                 saved.append((name, destination))
         except Exception:
             shutil.rmtree(run_directory, ignore_errors=True)

@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { api, messageOf } from '../api/client';
 import type { Run, Subsystem } from '../api/types';
-import { rememberUpload } from '../utils/domain';
 export function useRun(subsystem: Subsystem, runId?: string) {
   const [run, setRun] = useState<Run | null>(null); const [error, setError] = useState('');
   const [uploading, setUploading] = useState(false); const [loading, setLoading] = useState(!!runId);
@@ -29,7 +28,6 @@ export function useRun(subsystem: Subsystem, runId?: string) {
     try {
       const created = await api.createRun(subsystem, files, controller.signal);
       if (controller.signal.aborted) return;
-      rememberUpload(created.run_id, files);
       location.hash = `#/${subsystem}?run=${encodeURIComponent(created.run_id)}`;
     } catch (error) { if (!controller.signal.aborted) setError(messageOf(error)); }
     finally { if (!controller.signal.aborted) setUploading(false); }

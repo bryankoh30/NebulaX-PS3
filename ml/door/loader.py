@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+import re
 
 import numpy as np
 import pandas as pd
@@ -11,28 +12,26 @@ import pandas as pd
 # ── Timestamp helpers ──────────────────────────────────────────────────────────
 
 def parse_timestamp(s: str) -> pd.Timestamp:
-    """Parse the non-standard 'YYYY-M-D-H-M-S-ms' format used in Door CSVs.
+    """Parse native 'YYYY-M-D-H-M-S-ms' or timezone-free ISO Door timestamps.
 
     The format is NOT zero-padded (e.g. '2023-7-5-0-0-3-700').
     Milliseconds are stored as an integer (0-999); pandas Timestamp takes
     microseconds so we multiply by 1000.
     """
-    parts = str(s).split("-")
-    yr, mo, dy, h, m, sec, ms = [int(x) for x in parts]
-    return pd.Timestamp(yr, mo, dy, h, m, sec, ms * 1_000)
+    value = str(s)
+    if re.fullmatch(r"\d{4}(?:-\d{1,2}){5}-\d{1,3}", value):
+        yr, mo, dy, h, m, sec, ms = [int(x) for x in value.split("-")]
+        return pd.Timestamp(yr, mo, dy, h, m, sec, ms * 1_000)
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,6})?", value):
+        return pd.Timestamp(value)
+    raise ValueError(f"Invalid Door timestamp (expected source format or timezone-free ISO): {value}")
 
 
 def format_timestamp(ts: pd.Timestamp) -> str:
-    """Format a Timestamp back to the source 'YYYY-M-D-H-M-S-ms' representation.
-
-    This is used so output timestamps match the exact string format in the
-    ground-truth files.
-    """
-    ms = ts.microsecond // 1_000
-    return (
-        f"{ts.year}-{ts.month}-{ts.day}-"
-        f"{ts.hour}-{ts.minute}-{ts.second}-{ms}"
-    )
+    """Return consistent ISO milliseconds without inventing a timezone."""
+    if ts.tzinfo is not None:
+        raise ValueError("Door recordings must use timezone-free timestamps.")
+    return ts.isoformat(timespec="milliseconds")
 
 
 def ts_to_ms(ts: pd.Timestamp) -> int:

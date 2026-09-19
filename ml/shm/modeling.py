@@ -39,6 +39,9 @@ class EvaluationResult:
     hyperparameters: str
     CV_MAPE_mean: float
     CV_MAPE_std: float
+    CV_official_score: float
+    OOF_MAPE: float
+    OOF_official_score: float
     median_APE: float
     P90_APE: float
     max_APE: float
@@ -67,7 +70,16 @@ def make_model(name: str):
     raise ValueError(f"Unknown SHM model: {name}")
 
 
+def official_score(mape: float) -> float:
+    """PS3 score from fractional MAPE (0.10 means 10%, not 10)."""
+    if not np.isfinite(mape) or mape < 0:
+        raise ValueError("MAPE must be a finite nonnegative fraction.")
+    return max(0.0, 1.0 - float(mape))
+
+
 def percentage_errors(y_true: np.ndarray, y_pred: np.ndarray) -> np.ndarray:
+    if not np.isfinite(y_true).all() or not np.isfinite(y_pred).all():
+        raise ValueError("SHM metric inputs must be finite.")
     if np.any(y_true <= 0):
         raise ValueError("MAPE requires strictly positive SHM targets.")
     return np.abs(y_true - y_pred) / np.abs(y_true)
@@ -77,6 +89,7 @@ def _metrics(y_true: np.ndarray, y_pred: np.ndarray) -> dict[str, float]:
     ape = percentage_errors(y_true, y_pred)
     return {
         "MAPE": float(np.mean(ape)),
+        "official_score": official_score(float(np.mean(ape))),
         "median_APE": float(np.median(ape)),
         "P90_APE": float(np.percentile(ape, 90)),
         "max_APE": float(np.max(ape)),
@@ -128,6 +141,9 @@ def evaluate_candidate(
         hyperparameters=json.dumps(make_model(model_name).get_params(deep=False), default=str, sort_keys=True),
         CV_MAPE_mean=float(np.mean(fold_mapes)),
         CV_MAPE_std=float(np.std(fold_mapes, ddof=1)),
+        CV_official_score=official_score(float(np.mean(fold_mapes))),
+        OOF_MAPE=oof_metrics["MAPE"],
+        OOF_official_score=oof_metrics["official_score"],
         median_APE=oof_metrics["median_APE"],
         P90_APE=oof_metrics["P90_APE"],
         max_APE=oof_metrics["max_APE"],

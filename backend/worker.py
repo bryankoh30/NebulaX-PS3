@@ -6,7 +6,7 @@ from pathlib import Path
 from queue import Queue
 from threading import Thread
 
-from .adapters import run_inference
+from .adapters import ArtifactUnavailableError, run_inference
 from .charts import build_chart_series
 from .database import Store
 
@@ -46,6 +46,8 @@ class InferenceWorker:
                 str(run["subsystem"]), paths, self.chart_point_limit
             )
             self.store.complete_run(run_id, records, charts)
+        except ArtifactUnavailableError as exc:
+            self.store.fail_run(run_id, "model_unavailable", str(exc))
         except Exception as exc:
             self.store.fail_run(run_id, "inference_failed", str(exc) or type(exc).__name__)
 

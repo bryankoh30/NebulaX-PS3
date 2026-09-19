@@ -120,6 +120,13 @@ Records are plain JSON-serializable dicts. Importing any Door module performs no
 model loading, data reading, or training. Missing artifacts or invalid input
 raise explicit errors — there are no mock fallbacks.
 
+Recording input accepts both the native non-zero-padded timestamps and
+timezone-free ISO timestamps. Newly inferred cycle bounds and backend chart
+points use `YYYY-MM-DDTHH:MM:SS.sss` with no inferred timezone, as required by
+the shared model contract. Existing native-format CSV records remain accepted
+by the serializer; the frontend supports older stored runs too. Timestamp
+normalization does not change segmentation, features, labels, or trained weights.
+
 ## Artifacts
 
 Stored in `artifacts/` (git-ignored except `.gitkeep`):

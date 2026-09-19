@@ -49,7 +49,7 @@ def _door_series(paths: Sequence[Path], limit: int) -> list[dict[str, object]]:
     timestamps = [format_timestamp(value) for value in frame["ts"]]
     definitions = (
         ("Motor current(mA)", "motor-current", "Motor current", "mA"),
-        ("Door leaf position", "door-position", "Door leaf position", "position"),
+        ("Door leaf position", "door-position", "Door leaf position", ""),
     )
     return [
         {
@@ -82,7 +82,7 @@ def _acv_series(paths: Sequence[Path], limit: int) -> list[dict[str, object]]:
                     "file_id": path.name,
                     "series_id": f"car-{car_id}-temperature",
                     "label": f"Car {car_id} cabin temperature",
-                    "unit": "temperature",
+                    "unit": "",
                     "x_kind": "sample_index",
                     "car_id": car_id,
                     "points": _points(values, limit),
@@ -107,7 +107,7 @@ def _rail_series(paths: Sequence[Path], limit: int) -> list[dict[str, object]]:
                     "file_id": path.name,
                     "series_id": f"{path.stem}-{side.lower().replace(' ', '-')}-vibration",
                     "label": f"{side} aggregated vibration",
-                    "unit": "sensor units",
+                    "unit": "m/s²",
                     "x_kind": "sample_index",
                     "side": side,
                     "points": _points(aggregate, limit),
@@ -122,7 +122,7 @@ def _shm_series(paths: Sequence[Path], limit: int) -> list[dict[str, object]]:
             "file_id": path.name,
             "series_id": f"{path.stem}-stress",
             "label": "Stress",
-            "unit": "stress",
+            "unit": "",
             "x_kind": "sample_index",
             "points": _points(load_signal(path), limit),
         }

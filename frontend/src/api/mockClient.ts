@@ -1,12 +1,13 @@
 // Development fixtures only. Does not read recordings or perform inference.
-import type { ApiClient, Run, Subsystem, Result, ChartSeries } from './types';
-const key = 'ps3-development-fixtures-v1';
-interface Stored { run: Run; started: number; fail: boolean }
+import type { ApiClient, Run, Subsystem, Result, ChartSeries, ReviewEvent } from './types';
+const key = 'ps3-development-fixtures-v2';
+interface Stored { run: Run; started: number; fail: boolean; reviews: Record<string, ReviewEvent[]> }
 function read(): Stored[] { try { return JSON.parse(sessionStorage.getItem(key) ?? '[]'); } catch { return []; } }
 function write(items: Stored[]) { sessionStorage.setItem(key, JSON.stringify(items)); }
 function check(signal?: AbortSignal) { signal?.throwIfAborted(); }
 function fixture(subsystem: Subsystem, files: File[], run_id: string): Run {
-  const common = { run_id, status: 'queued' as const, error: null, chart_series: [] as ChartSeries[] };
+  const now = new Date().toISOString();
+  const common = { run_id, status: 'queued' as const, error: null, chart_series: [] as ChartSeries[], files: files.map(file => file.name), created_at: now, updated_at: now };
   const review = { review_status: 'unreviewed' as const, review_note: null };
   const id = (i: number) => `${run_id}-${i}`;
   switch (subsystem) {
@@ -19,14 +20,15 @@ function fixture(subsystem: Subsystem, files: File[], run_id: string): Run {
 function resolve(item: Stored): Run {
   const elapsed = Date.now() - item.started;
   const status = elapsed < 800 ? 'queued' : elapsed < 2200 ? 'running' : item.fail ? 'failed' : 'completed';
-  return { ...item.run, status, results: status === 'completed' ? item.run.results : [], error: status === 'failed' ? { code: 'MOCK_FAILURE', message: 'Development fixture: this recording could not be analysed. Select another file and try again.' } : null } as Run;
+  const updated_at = new Date(item.started + (status === 'queued' ? 0 : status === 'running' ? 800 : 2200)).toISOString();
+  return { ...item.run, updated_at, status, results: status === 'completed' ? item.run.results : [], error: status === 'failed' ? { code: 'MOCK_FAILURE', message: 'Development fixture: this recording could not be analysed. Select another file and try again.' } : null } as Run;
 }
 function csvCell(value: unknown) { return `"${String(value).replaceAll('"', '""')}"`; }
 export const mockClient: ApiClient = {
   async createRun(subsystem, files, signal) {
     check(signal);
     const run_id = crypto.randomUUID();
-    write([{ run: fixture(subsystem, files, run_id), started: Date.now(), fail: files.some(f => f.name.startsWith('fail-')) }, ...read()]);
+    write([{ run: fixture(subsystem, files, run_id), started: Date.now(), fail: files.some(f => f.name.startsWith('fail-')), reviews: {} }, ...read()]);
     return { run_id, status: 'queued' };
   },
   async getRun(id, signal) {
@@ -34,12 +36,17 @@ export const mockClient: ApiClient = {
     if (!item) throw new Error('Run not found. Development fixtures are stored in this browser tab.');
     return resolve(item);
   },
-  async listRuns(signal) { check(signal); return read().map(item => { const { run_id, subsystem, status } = resolve(item); return { run_id, subsystem, status }; }); },
+  async listRuns(signal) { check(signal); return read().map(item => { const { run_id, subsystem, status, created_at, updated_at, error, files, results } = resolve(item); return { run_id, subsystem, status, created_at, updated_at, error, file_count: files.length, result_count: results.length }; }); },
   async reviewResult(id, status, note, signal) {
     check(signal); const items = read();
     const result = items.flatMap(item => item.run.results as Result[]).find(result => result.result_id === id);
     if (!result) throw new Error('Result not found.');
-    result.review_status = status; result.review_note = note; write(items);
+    if (note.length > 2000) throw new Error('Review notes must be at most 2000 characters.');
+    note = note.trim();
+    result.review_status = status; result.review_note = note;
+    const item = items.find(item => item.run.results.some(result => result.result_id === id))!;
+    (item.reviews[id] ??= []).push({ id: crypto.randomUUID(), status, note, created_at: new Date().toISOString() });
+    write(items);
     return { review_status: status, review_note: note };
   },
   async exportRun(id, signal) {
@@ -52,6 +59,12 @@ export const mockClient: ApiClient = {
       default: rows = [['file_id', 'prediction'], ...run.results.map(r => [r.file_id, r.prediction])];
     }
     return new Blob([rows.map(row => row.map(csvCell).join(',')).join('\r\n') + '\r\n'], { type: 'text/csv' });
+  },
+  async getReviews(id, signal) {
+    check(signal);
+    const item = read().find(item => item.run.results.some(result => result.result_id === id));
+    if (!item) throw new Error('Result not found.');
+    return item.reviews[id] ?? [];
   },
   async exportZip() { throw new Error('ZIP export requires the real backend.'); },
 };

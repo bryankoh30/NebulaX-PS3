@@ -4,8 +4,8 @@ Public contract (see contracts/model.md):
 
     predict_door(input_path, artifact_dir=None) -> list[dict]
 
-Each returned record has ``start_time``, ``end_time`` (source
-'YYYY-M-D-H-M-S-ms' format) and ``prediction`` (exactly ``Normal`` or
+Each returned record has ``start_time``, ``end_time`` (timezone-free ISO
+timestamps with milliseconds) and ``prediction`` (exactly ``Normal`` or
 ``Abnormal resistance``).  Inference loads the saved model, never trains, and
 raises explicit errors on missing artifacts or invalid input.
 """

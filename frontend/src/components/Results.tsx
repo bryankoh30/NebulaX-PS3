@@ -4,6 +4,7 @@ import type { AcvResult, DoorResult, Result, Run, Review, ReviewStatus } from '.
 import { api, capabilities, messageOf, mockMode } from '../api/client';
 import { saveBlob, summary } from '../utils/domain';
 import { EmptyState, ErrorState, StatusBadge } from './States';
+import { ReviewHistory } from './ReviewHistory';
 const ChartCard = lazy(() => import('./ChartCard').then(module => ({ default: module.ChartCard })));
 
 function ReviewForm({ result, onSaved }: { result: Result; onSaved: (review: Review) => void }) {
@@ -13,10 +14,11 @@ function ReviewForm({ result, onSaved }: { result: Result; onSaved: (review: Rev
     event.preventDefault(); setBusy(true); setError(''); setSaved(false);
     try { const review = await api.reviewResult(result.result_id, status, note); onSaved(review); setSaved(true); }
     catch (error) { setError(messageOf(error)); } finally { setBusy(false); }
-  }}><h3>Engineering review</h3><p>Review decisions are recorded separately from the model prediction.</p><label htmlFor="review-status">Review status</label><select id="review-status" value={status} onChange={e => { setStatus(e.target.value as ReviewStatus); setSaved(false); }}><option value="unreviewed">Unreviewed</option><option value="confirmed">Confirm</option><option value="dismissed">Dismiss</option><option value="resolved">Resolve</option></select><label htmlFor="review-note">Add note</label><textarea id="review-note" rows={3} value={note} onChange={e => { setNote(e.target.value); setSaved(false); }} /><button className="primary" disabled={busy}>{busy ? 'Saving…' : 'Save review'}</button>{saved && <p role="status">Review saved.</p>}{error && <ErrorState message={error} />}</form>;
+  }}><h3>Engineering review</h3><p>Review decisions are recorded separately from the model prediction.</p><label htmlFor="review-status">Review status</label><select id="review-status" value={status} onChange={e => { setStatus(e.target.value as ReviewStatus); setSaved(false); }}><option value="unreviewed">Unreviewed</option><option value="confirmed">Confirm</option><option value="dismissed">Dismiss</option><option value="resolved">Resolve</option></select><label htmlFor="review-note">Add note</label><textarea id="review-note" rows={3} maxLength={2000} value={note} onChange={e => { setNote(e.target.value); setSaved(false); }} /><button className="primary" disabled={busy}>{busy ? 'Saving…' : 'Save review'}</button>{saved && <p role="status">Review saved.</p>}{error && <ErrorState message={error} />}</form>;
 }
 function Detail({ run, result, onClose, onSaved }: { run: Run; result: Result; onClose: () => void; onSaved: (review: Review) => void }) {
   const dialog = useRef<HTMLDialogElement>(null);
+  const [reviewVersion, setReviewVersion] = useState(0);
   useEffect(() => {
     const node = dialog.current!;
     node.showModal();
@@ -38,7 +40,7 @@ function Detail({ run, result, onClose, onSaved }: { run: Run; result: Result; o
     {abnormalDoor && <div className="context-box"><h3>Possible causes to inspect</h3><p>Contextual examples, not detected causes:</p><ul><li>Obstruction</li><li>Rubber strip jamming</li><li>Door deformation</li><li>Mechanical resistance</li></ul></div>}
     <h3>Supporting evidence</h3>{charts.length ? <Suspense fallback={<p role="status">Loading chart…</p>}>{charts.map(series => <ChartCard key={`${series.file_id}-${series.series_id}`} series={series} cycle={run.subsystem === 'door' ? result as DoorResult : undefined} />)}</Suspense> : <p className="evidence-empty">No supporting chart data was supplied for this finding.</p>}
     <div className="review-status"><strong>Review status</strong><StatusBadge value={result.review_status ?? 'unreviewed'} /></div>{result.review_note && <p className="saved-note">{result.review_note}</p>}
-    {capabilities.reviews && <ReviewForm result={result} onSaved={onSaved} />}
+    {capabilities.reviews && <><ReviewForm result={result} onSaved={review => { onSaved(review); setReviewVersion(version => version + 1); }} /><ReviewHistory resultId={result.result_id} version={reviewVersion} /></>}
   </div></dialog>;
 }
 export function Results({ run, onUpdate }: { run: Run; onUpdate: (run: Run) => void }) {

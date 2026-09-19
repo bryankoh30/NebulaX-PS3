@@ -19,6 +19,7 @@ def evaluate(dataset_root=None):
     extraction_seconds = time.perf_counter() - start
     report = {'feature_version': FEATURE_VERSION, 'split_sha256': digest(PACKAGE / 'validation_split.json'),
               'model_source_sha256': model_source_hashes(),
+              'source_hash_algorithm': 'sha256-crlf-normalized-to-lf',
               'classes': CLASSES, 'feature_count': len(names), 'feature_matrix_bytes': values.nbytes,
               'feature_loading_seconds': extraction_seconds, 'models': {}}
     for name in ['always_normal', 'random_forest', 'extra_trees']:

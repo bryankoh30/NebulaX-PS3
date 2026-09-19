@@ -1,6 +1,6 @@
 # Shared Model Contract
 
-This is the initial contract from plan.md. Owners coordinate changes with B before other packages depend on them. Current work is Python-only; no HTTP or frontend contract is needed yet.
+This is the shared subsystem contract from plan.md. Owners coordinate changes with B before other packages depend on them. The separate [API contract](api.md) defines backend/frontend metadata; model functions remain independent of the application.
 
 ## Ownership
 
@@ -37,7 +37,7 @@ Each package provides `python -m ml.<subsystem>.predict --input PATH --output PA
 
 ACV joins the list of string IDs with a literal pipe character only at CSV serialization. Do not include a dataframe index, confidence, application IDs, or reviewer metadata. CSV writing belongs inside each subsystem package for reuse by the later backend.
 
-The CLI is currently a scaffold that exits with an implementation-pending error. Owners implement inference, input discovery, output validation, and serialization together; a successful invocation must mean a real prediction file was written.
+All four CLIs implement inference and export using installed frozen artifacts. A successful invocation must mean a real prediction file was written; missing artifacts fail explicitly. The backend reuses each subsystem's CSV serializer, including `ml.shm.serialize.write_predictions`.
 
 ## Training and Handoff
 

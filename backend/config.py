@@ -8,6 +8,7 @@ from pathlib import Path
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_MAX_UPLOAD_BYTES = 2 * 1024 * 1024 * 1024
 
 
 @dataclass(frozen=True)
@@ -18,6 +19,12 @@ class Settings:
     max_upload_bytes: int
     chart_point_limit: int
     cors_origins: tuple[str, ...]
+
+    def __post_init__(self) -> None:
+        if self.max_upload_bytes <= 0:
+            raise ValueError("BACKEND_MAX_UPLOAD_BYTES must be a positive byte count.")
+        if self.chart_point_limit < 2:
+            raise ValueError("BACKEND_CHART_POINT_LIMIT must be at least 2.")
 
     @classmethod
     def from_env(cls) -> "Settings":
@@ -36,7 +43,7 @@ class Settings:
             data_dir=data_dir,
             database_path=data_dir / "nebulax.sqlite3",
             upload_dir=data_dir / "uploads",
-            max_upload_bytes=int(os.getenv("BACKEND_MAX_UPLOAD_BYTES", str(250 * 1024 * 1024))),
+            max_upload_bytes=int(os.getenv("BACKEND_MAX_UPLOAD_BYTES", str(DEFAULT_MAX_UPLOAD_BYTES))),
             chart_point_limit=int(os.getenv("BACKEND_CHART_POINT_LIMIT", "500")),
             cors_origins=origins,
         )

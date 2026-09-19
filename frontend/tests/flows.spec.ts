@@ -1,21 +1,30 @@
 import { test, expect, type Page } from '@playwright/test';
-import type { Run, Subsystem } from '../src/api/types';
+import type { Run, RunSummary, Subsystem } from '../src/api/types';
+import { recordingTimestampKey, withinCycle } from '../src/utils/timestamps';
 
 const review = { review_status: 'unreviewed' as const, review_note: null };
 function fixture(subsystem: Subsystem): Run {
-  const base = { run_id: `${subsystem}-run`, status: 'completed' as const, error: null, chart_series: [] };
+  const files = subsystem === 'rail' ? ['recording0.csv', 'recording1.csv', 'recording2.csv'] : [subsystem === 'acv' ? 'case.xlsx' : subsystem === 'shm' ? 'stress.csv' : 'recording.csv'];
+  const base = { run_id: `${subsystem}-run`, status: 'completed' as const, error: null, chart_series: [], files, created_at: '2026-09-19T01:00:00+00:00', updated_at: '2026-09-19T01:00:05+00:00' };
   if (subsystem === 'rail') return { ...base, subsystem, results: ['Normal', 'Side I', 'Side II'].map((prediction, i) => ({ ...review, result_id: `r${i}`, file_id: `recording${i}.csv`, prediction })) } as Run;
   if (subsystem === 'door') return { ...base, subsystem, results: ['Normal', 'Abnormal resistance'].map((prediction, i) => ({ ...review, result_id: `d${i}`, start_time: `2023-07-05T00:00:${i}0.000`, end_time: `2023-07-05T00:00:${i}6.000`, prediction })) } as Run;
   if (subsystem === 'acv') return { ...base, subsystem, results: [{ ...review, result_id: 'a1', file_id: 'case.xlsx', ranked_cars: ['03', '09', '02'] }] };
   return { ...base, subsystem, results: [{ ...review, result_id: 's1', file_id: 'stress.csv', prediction: 0.00482 }] };
 }
+function runSummary(run: Run): RunSummary {
+  const { run_id, status, subsystem, created_at, updated_at, error } = run;
+  return { run_id, status, subsystem, created_at, updated_at, error, file_count: run.files.length, result_count: run.results.length };
+}
+test.beforeEach(async ({ page }) => {
+  await page.route('**/api/results/*/reviews', route => route.fulfill({ json: [] }));
+});
 async function serve(page: Page, subsystem: Subsystem) {
   const run = fixture(subsystem); let polls = 0; const times: number[] = []; let started = 0;
   await page.route('**/api/runs', async route => {
     if (route.request().method() === 'POST') {
       expect(route.request().postDataBuffer()?.toString()).toContain(`name="subsystem"\r\n\r\n${subsystem}`);
       await route.fulfill({ status: 202, json: { run_id: run.run_id, status: 'queued' } });
-    } else await route.fulfill({ json: [{ run_id: run.run_id, subsystem, status: 'completed' }] });
+    } else await route.fulfill({ json: [runSummary(run)] });
   });
   await page.route(`**/api/runs/${run.run_id}`, async route => {
     times.push(Date.now()); polls++; started ||= Date.now();
@@ -57,7 +66,7 @@ test('Door cycles, contextual causes and review keep predictions unchanged', asy
   await expect(page.getByRole('dialog')).toContainText('Possible causes to inspect');
   await page.route('**/api/results/d1/review', async route => {
     expect(route.request().postDataJSON()).toEqual({ status: 'dismissed', note: 'Inspected movement' });
-    await route.fulfill({ json: { review_status: 'dismissed', review_note: 'Inspected movement' } });
+    await route.fulfill({ json: { review_status: 'dismissed', review_note: 'Inspected movement', prediction: 'Normal' } });
   });
   await page.getByLabel('Review status', { exact: true }).selectOption('dismissed');
   await page.getByLabel('Add note').fill('Inspected movement');
@@ -108,7 +117,7 @@ test('polling stops on failure and navigation; failure message is readable', asy
 });
 test('Overview, history, refresh, reopening and ZIP request', async ({ page }, testInfo) => {
   const runs = (['door', 'acv', 'rail', 'shm'] as const).map(fixture);
-  await page.route('**/api/runs', route => route.fulfill({ json: runs.map(({ run_id, subsystem, status }) => ({ run_id, subsystem, status })) }));
+  await page.route('**/api/runs', route => route.fulfill({ json: runs.map(runSummary) }));
   for (const run of runs) await page.route(`**/api/runs/${run.run_id}`, route => route.fulfill({ json: run }));
   await page.goto('/#/overview');
   await expect(page.getByRole('heading', { name: 'Recent findings' })).toBeVisible();
@@ -175,4 +184,74 @@ test('separate development adapter models all run types and fixture failures', a
   expect(results.runs.every((run: Run) => run.status === 'completed')).toBeTruthy();
   expect(results.failed.status).toBe('failed');
   expect(results.csv).toContain('03|05|02');
+});
+
+test('recording timestamps compare chronologically across legacy and ISO formats', () => {
+  expect(withinCycle('2023-7-5-0-0-10-0', '2023-7-5-0-0-9-0', '2023-7-5-0-0-12-0')).toBe(true);
+  expect(withinCycle('2023-07-05T00:01:00.001', '2023-7-5-0-0-59-999', '2023-7-5-0-1-0-20')).toBe(true);
+  expect(withinCycle('2024-01-01T00:00:00.000', '2023-12-31-23-59-59-999', '2024-1-1-0-0-1-0')).toBe(true);
+  expect(withinCycle('2023-7-5-0-0-8-999', '2023-07-05T00:00:09.000', '2023-07-05T00:00:12.000')).toBe(false);
+  expect(recordingTimestampKey('2023-7-5-0-0-9-20')).toBe(recordingTimestampKey('2023-07-05T00:00:09.020'));
+  expect(recordingTimestampKey('2023-02-29T00:00:00')).toBeNull();
+  expect(recordingTimestampKey('2024-02-29T00:00:00')).not.toBeNull();
+  expect(withinCycle('invalid', '2023-7-5-0-0-9-0', '2023-7-5-0-0-12-0')).toBe(false);
+});
+
+test('legacy Door cycle chart retains valid points and excludes adjacent cycles', async ({ page }) => {
+  const run = fixture('door');
+  if (run.subsystem !== 'door') throw new Error('Wrong fixture');
+  run.results[0].start_time = '2023-7-5-0-0-9-0'; run.results[0].end_time = '2023-7-5-0-0-12-0';
+  run.chart_series = [{ file_id: 'recording.csv', series_id: 'current', label: 'Motor current', unit: 'mA', x_kind: 'timestamp', points: [
+    { x: '2023-7-5-0-0-8-0', y: 999 }, { x: '2023-7-5-0-0-10-0', y: 123 }, { x: '2023-07-05T00:00:11.000', y: 456 }, { x: '2023-7-5-0-0-13-0', y: 888 },
+  ] }];
+  await page.route('**/api/runs/door-run', route => route.fulfill({ json: run }));
+  await page.goto('/#/door?run=door-run'); await page.getByRole('button', { name: 'Cycle 1' }).click();
+  await page.getByText('View chart data', { exact: true }).click();
+  const table = page.getByRole('dialog').getByRole('table');
+  await expect(table.getByRole('row')).toHaveCount(3);
+  await expect(table).toContainText('123'); await expect(table).toContainText('456');
+  await expect(table).not.toContainText('999'); await expect(table).not.toContainText('888');
+});
+
+test('history uses persisted API metadata in a fresh browser session', async ({ page }) => {
+  const run = fixture('rail');
+  await page.route('**/api/runs', route => route.fulfill({ json: [runSummary(run)] }));
+  await page.goto('/#/history');
+  const row = page.getByRole('row').filter({ hasText: 'Rail Corrugation' });
+  await expect(row.getByRole('cell').nth(2)).toHaveText('3');
+  await expect(row).toContainText(run.created_at);
+  await expect(row).toContainText('3 results');
+  await page.reload(); await expect(row).toContainText(run.created_at);
+  await expect(page.getByText('Unavailable', { exact: true })).toHaveCount(0);
+});
+
+test('review history loads and refreshes after saving metadata', async ({ page }) => {
+  const run = fixture('door'); let saved = false;
+  await page.route('**/api/runs/door-run', route => route.fulfill({ json: run }));
+  await page.route('**/api/results/d0/reviews', route => route.fulfill({ json: saved ? [{ id: 'event', status: 'confirmed', note: 'Checked cycle', created_at: '2026-09-19T02:00:00+00:00' }] : [] }));
+  await page.route('**/api/results/d0/review', route => { saved = true; return route.fulfill({ json: { ...run.results[0], review_status: 'confirmed', review_note: 'Checked cycle' } }); });
+  await page.goto('/#/door?run=door-run'); await page.getByRole('button', { name: 'Cycle 1' }).click();
+  await expect(page.getByText('No review events recorded.')).toBeVisible();
+  await expect(page.getByLabel('Add note')).toHaveAttribute('maxlength', '2000');
+  await page.getByLabel('Review status', { exact: true }).selectOption('confirmed');
+  await page.getByLabel('Add note').fill('Checked cycle'); await page.getByRole('button', { name: 'Save review' }).click();
+  const history = page.getByRole('region', { name: 'Review history' });
+  await expect(history).toContainText('Checked cycle'); await expect(history).toContainText('2026-09-19T02:00:00+00:00');
+});
+
+test('case-insensitive duplicate uploads match backend validation', async ({ page }) => {
+  await page.goto('/#/rail');
+  await page.locator('input[type=file]').setInputFiles(['sample.csv', 'SAMPLE.csv'].map(name => ({ name, mimeType: 'text/csv', buffer: Buffer.from('synthetic') })));
+  await expect(page.getByRole('alert')).toContainText('ignoring case');
+  await expect(page.getByRole('button', { name: 'Analyse recordings' })).toBeDisabled();
+});
+
+test('validation and missing-model errors remain readable', async ({ page }) => {
+  await page.route('**/api/runs', route => route.fulfill({ status: 422, json: { detail: [{ loc: ['body', 'files'], msg: 'Field required' }] } }));
+  await upload(page, 'shm');
+  await expect(page.getByRole('alert')).toContainText('files: Field required');
+  await page.route('**/api/runs/unavailable', route => route.fulfill({ json: { ...fixture('shm'), status: 'failed', results: [], error: { code: 'model_unavailable', message: 'SHM analysis is unavailable because its model artifact is not installed.' } } }));
+  await page.goto('/#/shm?run=unavailable');
+  await expect(page.getByRole('alert')).toContainText('model artifact is not installed');
+  await expect(page.getByRole('button', { name: 'Download shm_predictions.csv' })).toHaveCount(0);
 });

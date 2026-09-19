@@ -3,10 +3,9 @@
 import argparse
 from pathlib import Path
 
-import pandas as pd
-
 from ml.shm.data import discover_csv_files
 from ml.shm.inference import predict_shm
+from ml.shm.serialize import write_predictions
 
 
 def main() -> None:
@@ -17,10 +16,8 @@ def main() -> None:
     args = parser.parse_args()
     paths = discover_csv_files(args.input)
     records = predict_shm(paths, args.artifacts)
-    output = pd.DataFrame(records, columns=["file_id", "prediction"])
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    output.to_csv(args.output, index=False)
-    print(f"Wrote {len(output)} SHM predictions to {args.output}")
+    write_predictions(records, args.output)
+    print(f"Wrote {len(records)} SHM predictions to {args.output}")
 
 
 if __name__ == "__main__":
