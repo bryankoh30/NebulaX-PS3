@@ -135,7 +135,7 @@ def extract_features(seg: pd.DataFrame) -> np.ndarray:
     power_mean = float(np.mean(cur * vol))
 
     # Current area (integral proxy using trapezoidal rule over uniform 20ms steps)
-    current_area = float(np.trapz(cur)) * 20.0  # unit: mA·ms
+    current_area = float(np.trapezoid(cur)) * 20.0  # unit: mA·ms
 
     # Roughness: successive-difference RMS
     cur_diff_rms = float(np.sqrt(np.mean(np.diff(cur) ** 2))) if n > 1 else 0.0
