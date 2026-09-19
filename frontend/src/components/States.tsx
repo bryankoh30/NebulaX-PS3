@@ -7,4 +7,4 @@ export function StatusBadge({ value }: { value: string }) {
 }
 export function LoadingState({ text = 'Loading recordings…' }: { text?: string }) { return <div className="state compact" role="status"><LoaderCircle className="spin" size={22} /><span>{text}</span></div>; }
 export function ErrorState({ message, retry }: { message: string; retry?: () => void }) { return <div className="error" role="alert"><AlertCircle size={20} /><div><strong>Unable to complete this step</strong><p>{message}</p>{retry && <button className="secondary" onClick={retry}>Try again</button>}</div></div>; }
-export function EmptyState({ title = 'No recordings analysed yet', text = 'Upload recordings to see model findings and supporting evidence.' }: { title?: string; text?: string }) { return <div className="state"><ScanLine size={32} /><h3>{title}</h3><p>{text}</p></div>; }
+export function EmptyState({ title = 'No recordings analysed yet', text = 'Upload recordings to see model findings and signal context.' }: { title?: string; text?: string }) { return <div className="state"><ScanLine size={32} /><h3>{title}</h3><p>{text}</p></div>; }

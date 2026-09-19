@@ -8,7 +8,7 @@ function fixture(subsystem: Subsystem): Run {
   const base = { run_id: `${subsystem}-run`, status: 'completed' as const, error: null, chart_series: [], files, created_at: '2026-09-19T01:00:00+00:00', updated_at: '2026-09-19T01:00:05+00:00' };
   if (subsystem === 'rail') return { ...base, subsystem, results: ['Normal', 'Side I', 'Side II'].map((prediction, i) => ({ ...review, result_id: `r${i}`, file_id: `recording${i}.csv`, prediction })) } as Run;
   if (subsystem === 'door') return { ...base, subsystem, results: ['Normal', 'Abnormal resistance'].map((prediction, i) => ({ ...review, result_id: `d${i}`, start_time: `2023-07-05T00:00:${i}0.000`, end_time: `2023-07-05T00:00:${i}6.000`, prediction })) } as Run;
-  if (subsystem === 'acv') return { ...base, subsystem, results: [{ ...review, result_id: 'a1', file_id: 'case.xlsx', ranked_cars: ['03', '09', '02'] }] };
+  if (subsystem === 'acv') return { ...base, subsystem, chart_series: ['03', '09', '02'].map((car_id, index) => ({ file_id: 'case.xlsx', series_id: `car-${car_id}-temperature`, label: `Car ${car_id} cabin temperature`, unit: 'temperature', x_kind: 'sample_index' as const, car_id, points: [{ x: 0, y: 22 + index }, { x: 1, y: 23 + index }] })), results: [{ ...review, result_id: 'a1', file_id: 'case.xlsx', ranked_cars: ['03', '09', '02'] }] };
   return { ...base, subsystem, results: [{ ...review, result_id: 's1', file_id: 'stress.csv', prediction: 0.00482 }] };
 }
 function runSummary(run: Run): RunSummary {
@@ -51,6 +51,8 @@ test('Rail upload, polling, filters, details, official export and layout', async
   await expect(page.getByRole('button', { name: 'recording0.csv' })).toHaveCount(0);
   await page.getByRole('button', { name: 'recording1.csv' }).click();
   await expect(page.getByRole('dialog')).toContainText('The model detected a vibration pattern consistent with rail corrugation on Side I.');
+  await expect(page.getByRole('dialog')).toContainText('Review Side I and its supporting vibration signal');
+  await expect(page.getByRole('dialog').getByRole('heading', { name: 'Signal context' })).toBeVisible();
   await page.getByRole('button', { name: 'Close details' }).click();
   const download = page.waitForEvent('download');
   await page.getByRole('button', { name: 'Download rail_predictions.csv' }).click();
@@ -64,6 +66,7 @@ test('Door cycles, contextual causes and review keep predictions unchanged', asy
   await expect(page.getByRole('heading', { name: 'Detected cycles' })).toBeVisible();
   await page.getByRole('button', { name: 'Cycle 2' }).click();
   await expect(page.getByRole('dialog')).toContainText('Possible causes to inspect');
+  await expect(page.getByRole('dialog')).toContainText('Check the motor-current and door-position traces');
   await page.route('**/api/results/d1/review', async route => {
     expect(route.request().postDataJSON()).toEqual({ status: 'dismissed', note: 'Inspected movement' });
     await route.fulfill({ json: { review_status: 'dismissed', review_note: 'Inspected movement', prediction: 'Normal' } });
@@ -86,7 +89,17 @@ for (const subsystem of ['acv', 'shm'] as const) test(`${subsystem} displays its
   if (subsystem === 'acv') {
     await expect(dialog.locator('ol li')).toHaveText(['Car 03', 'Car 09', 'Car 02']);
     await expect(dialog).toContainText('The ranking compares each car');
-  } else { await expect(dialog).toContainText('0.00482'); await expect(dialog).toContainText('accumulated fatigue damage'); }
+    await expect(dialog).toContainText('Prioritise Car 03 for inspection');
+    await expect(dialog.getByRole('heading', { name: 'Cabin temperature across peer cars' })).toBeVisible();
+    await expect(dialog).toContainText('Top-ranked: Car 03');
+    await expect(dialog.locator('.acv-comparison')).toHaveCount(1);
+    await expect(dialog.locator('.chart-card')).toHaveCount(1);
+  } else {
+    await expect(dialog).toContainText('0.00482');
+    await expect(dialog).toContainText('cumulative fatigue damage from the supplied stress recording');
+    await expect(dialog).toContainText("operator's approved engineering limits and procedures");
+    await expect(dialog).toContainText('not a safety classification, failure probability, or remaining-life estimate');
+  }
   await page.screenshot({ path: testInfo.outputPath(`${subsystem}-details.png`), fullPage: true });
 });
 test('upload validation and multi-file controls', async ({ page }) => {
@@ -120,9 +133,12 @@ test('Overview, history, refresh, reopening and ZIP request', async ({ page }, t
   await page.route('**/api/runs', route => route.fulfill({ json: runs.map(runSummary) }));
   for (const run of runs) await page.route(`**/api/runs/${run.run_id}`, route => route.fulfill({ json: run }));
   await page.goto('/#/overview');
-  await expect(page.getByRole('heading', { name: 'Recent findings' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Review queue' })).toBeVisible();
   await expect(page.getByText('1 abnormal resistance cycle', { exact: true })).toBeVisible();
   await expect(page.getByText('Car 03 ranked first', { exact: true }).first()).toBeVisible();
+  const firstFinding = page.locator('tbody tr').first();
+  await expect(firstFinding).toContainText('Abnormal resistance');
+  await expect(firstFinding).toContainText('Needs review');
   await page.screenshot({ path: testInfo.outputPath('overview.png'), fullPage: true });
   await page.goto('/#/history');
   await expect(page.getByRole('link', { name: 'Open results' })).toHaveCount(4);
@@ -140,11 +156,12 @@ test('API errors do not silently fall back to fake results', async ({ page }) =>
   await expect(page.getByText('Development only', { exact: false })).toHaveCount(0);
   await page.getByRole('button', { name: 'Try again' }).click(); await expect(page.getByRole('alert')).toContainText('Worker is offline.');
 });
-test('supporting charts render only returned series', async ({ page }) => {
+test('signal context renders only returned series', async ({ page }) => {
   const run = fixture('rail'); run.chart_series = [{ file_id: 'recording1.csv', series_id: 'side-i', label: 'Side I aggregated vibration', unit: 'm/s²', x_kind: 'sample_index', side: 'Side I', points: [{ x: 0, y: 1 }, { x: 1, y: 2 }] }];
   await page.route('**/api/runs/rail-run', route => route.fulfill({ json: run }));
   await page.goto('/#/rail?run=rail-run'); await page.getByRole('button', { name: 'recording1.csv' }).click();
   await expect(page.getByRole('button', { name: 'Close details' })).toBeFocused();
+  await expect(page.getByRole('heading', { name: 'Signal context' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Side I aggregated vibration · Side I' })).toBeVisible();
   await page.getByText('View chart data', { exact: true }).click();
   await expect(page.getByRole('dialog').getByRole('table')).toContainText('Sample index');

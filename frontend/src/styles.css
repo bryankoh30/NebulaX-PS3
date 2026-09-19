@@ -9,3 +9,5 @@
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 .table-scroll table{min-width:680px}.chart-data table{min-width:280px}
 .skip-link:not(:focus-visible){top:-100px}
+.review-next{display:flex;align-items:flex-start;gap:12px;background:#edf4ee;border:1px solid #d6e4d9;padding:17px;border-radius:7px;margin:23px 0;color:#386151}.review-next h3{margin:0 0 5px}.review-next p{font-size:12px;line-height:1.7}.comparison-chart{height:280px}.comparison-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}.comparison-heading>strong{color:#176957;background:#e7f3ed;border:1px solid #c9e1d5;border-radius:5px;padding:5px 8px;font-size:11px;white-space:nowrap}.priority-finding{background:#fffaf2}.priority-finding:hover{background:#fdf5e8}.attention-label{color:#8a5927;font-weight:650}.attention-label::before{content:'';display:inline-block;width:5px;height:5px;background:#b47634;border-radius:50%;margin-right:6px;vertical-align:middle}
+@media(max-width:760px){.comparison-heading{display:block}.comparison-heading>strong{display:inline-block;margin-top:9px}.comparison-chart{height:250px}}
