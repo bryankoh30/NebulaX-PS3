@@ -1,0 +1,67 @@
+{
+  "artifact_version": 1,
+  "subsystem": "door",
+  "model": "random_forest_classifier",
+  "artifact_file": "ml/door/artifacts/door_classifier.joblib",
+  "artifact_sha256": "36b4fd3d2f0d35fc7ca54afa7d463862b1dc7eacef58eeeca115dea06cc6058a8",
+  "default_directory": "ml/door/artifacts",
+  "regeneration_command": "python -m ml.door.train --full",
+  "evaluation_command": "python -m ml.door.evaluate",
+  "training": {
+    "training_cycles": 110,
+    "split": "all labelled cycles (freeze)",
+    "class_distribution": {
+      "Abnormal resistance": 30,
+      "Normal": 80
+    },
+    "gap_threshold_ms": 500,
+    "random_state": 42
+  },
+  "feature_contract": {
+    "feature_count": 34,
+    "feature_names": [
+      "duration_ms",
+      "n_rows",
+      "current_mean",
+      "current_std",
+      "current_min",
+      "current_max",
+      "current_p25",
+      "current_p50",
+      "current_p75",
+      "current_range",
+      "current_peak_mean_ratio",
+      "voltage_mean",
+      "voltage_std",
+      "voltage_min",
+      "voltage_max",
+      "voltage_range",
+      "bemf_mean",
+      "bemf_std",
+      "bemf_min",
+      "bemf_max",
+      "bemf_range",
+      "pos_mean",
+      "pos_std",
+      "pos_min",
+      "pos_max",
+      "pos_range",
+      "pos_start",
+      "pos_end",
+      "pos_net_change",
+      "pos_mono_frac",
+      "power_mean",
+      "current_area",
+      "current_diff_rms",
+      "pos_diff_rms"
+    ]
+  },
+  "dependencies": {
+    "python": "3.12.10",
+    "numpy": "2.5.3",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0"
+  },
+  "trusted_artifacts_only": "joblib/pickle loading executes code; use only the team-generated artifact"
+}
