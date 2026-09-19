@@ -1,0 +1,30 @@
+{
+  "artifact_version": 1,
+  "subsystem": "acv",
+  "approach": "fixed_schema_aware_peer_ranking",
+  "generated_files": {
+    "ranker_config.json": "Frozen ranking weights and minimum valid-data fraction",
+    "metadata.json": "Inspected training schemas, creation time, and dependency versions"
+  },
+  "default_directory": "ml/acv/artifacts",
+  "regeneration_command": "python -m ml.acv.train",
+  "evaluation_command": "python -m ml.acv.evaluate",
+  "runtime": {
+    "python": "3.12.5",
+    "numpy": "2.1.1",
+    "pandas": "2.2.2",
+    "openpyxl": "3.1.5"
+  },
+  "validation": {
+    "protocol": "whole-workbook evaluation of a fixed label-free ranking rule",
+    "case_count": 6,
+    "mean_linear_rank_decay_score": 1.0,
+    "true_car_first_count": 6
+  },
+  "limitations": [
+    "Only six documented one-fault cases are available.",
+    "The reported score is not an estimate from an independent test set.",
+    "The ranker is not a calibrated probability model.",
+    "The supplied data cannot validate no-fault detection or leak quantity."
+  ]
+}

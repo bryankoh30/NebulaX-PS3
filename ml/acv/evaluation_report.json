@@ -1,0 +1,138 @@
+{
+  "protocol": "leave-one-workbook-out equivalent for a fixed, label-free ranker",
+  "metric": "mean_linear_rank_decay",
+  "mean_score": 1.0,
+  "cases": [
+    {
+      "file_id": "acv_case_01.xlsx",
+      "true_car": "01",
+      "rank": 1,
+      "car_count": 8,
+      "score": 1.0,
+      "ranked_cars": [
+        "01",
+        "03",
+        "02",
+        "04",
+        "08",
+        "07",
+        "06",
+        "05"
+      ],
+      "parameters_used": {
+        "indoor": "Indoor Average Temperature",
+        "cooling_target": "ACV Control Temperature (Cooling)"
+      }
+    },
+    {
+      "file_id": "acv_case_02.xlsx",
+      "true_car": "02",
+      "rank": 1,
+      "car_count": 8,
+      "score": 1.0,
+      "ranked_cars": [
+        "02",
+        "03",
+        "07",
+        "08",
+        "01",
+        "04",
+        "06",
+        "05"
+      ],
+      "parameters_used": {
+        "indoor": "Indoor Average Temperature",
+        "cooling_target": "ACV Control Temperature (Cooling)"
+      }
+    },
+    {
+      "file_id": "acv_case_03.xlsx",
+      "true_car": "03",
+      "rank": 1,
+      "car_count": 8,
+      "score": 1.0,
+      "ranked_cars": [
+        "03",
+        "04",
+        "08",
+        "02",
+        "01",
+        "07",
+        "06",
+        "05"
+      ],
+      "parameters_used": {
+        "indoor": "Indoor Average Temperature",
+        "cooling_target": "ACV Control Temperature (Cooling)"
+      }
+    },
+    {
+      "file_id": "acv_case_04.xlsx",
+      "true_car": "01",
+      "rank": 1,
+      "car_count": 8,
+      "score": 1.0,
+      "ranked_cars": [
+        "01",
+        "04",
+        "02",
+        "03",
+        "08",
+        "07",
+        "06",
+        "05"
+      ],
+      "parameters_used": {
+        "indoor": "Passenger Cabin Temperature Detected Value",
+        "cooling_target": "Target Temperature Value"
+      }
+    },
+    {
+      "file_id": "acv_case_05.xlsx",
+      "true_car": "04",
+      "rank": 1,
+      "car_count": 8,
+      "score": 1.0,
+      "ranked_cars": [
+        "04",
+        "02",
+        "01",
+        "07",
+        "06",
+        "03",
+        "08",
+        "05"
+      ],
+      "parameters_used": {
+        "indoor": "Indoor Average Temperature",
+        "cooling_target": "ACV Control Temperature (Cooling)"
+      }
+    },
+    {
+      "file_id": "acv_case_06.xlsx",
+      "true_car": "06",
+      "rank": 1,
+      "car_count": 8,
+      "score": 1.0,
+      "ranked_cars": [
+        "06",
+        "08",
+        "04",
+        "02",
+        "05",
+        "03",
+        "01",
+        "07"
+      ],
+      "parameters_used": {
+        "indoor": "Indoor Average Temperature",
+        "cooling_target": "ACV Control Temperature (Cooling)"
+      }
+    }
+  ],
+  "limitations": [
+    "Only six documented one-fault cases are available.",
+    "The fixed ranker is not a calibrated probability model.",
+    "The dataset cannot validate no-fault detection or leak quantity."
+  ]
+}
